@@ -8,13 +8,14 @@
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/style.css">
     <link rel="stylesheet" href="assets/css/wallet-dashboard.css">
+    <link rel="stylesheet" href="assets/css/glassmorphism.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>DevFund Dashboard</title>
 </head>
 
-<body>
+<body class="glass-theme">
     <header class="devfund-header">
-        <div class="logo"><i class="fas fa-heartbeat"></i> DevFund</div>
+        <a href="index.html" class="logo" style="text-decoration: none;"><i class="fas fa-heartbeat"></i> DevFund</a>
         <nav>
             <a href="wallet-dashboard.html" class="active">Dashboard</a>
             <a href="projects.html">Projects</a>
@@ -22,6 +23,9 @@
         </nav>
         <button class="menu-toggle">☰</button>
     </header>
+
+    <!-- Background City Skyline -->
+    <div class="city-background" style="position: fixed; bottom: 0; left: 0; width: 100%; height: 380px; background-image: url('assets/images/background.png'); background-size: cover; background-position: bottom center; background-repeat: no-repeat; z-index: -1; pointer-events: none;"></div>
 
     <main class="dashboard-grid">
         <!-- AI-Driven Insights Panel -->

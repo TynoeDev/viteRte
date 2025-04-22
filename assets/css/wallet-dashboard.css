@@ -5,7 +5,9 @@
     --text-secondary: #a0a8c0;
     --accent-blue: #00bfff;
     --accent-purple: #8a2be2;
-    --accent-green: #20b2aa;
+    --accent-silver: #c0c0c0;
+    --accent-platinum: #e5e4e2;
+    --accent-steel: #71797E;
     --spacing-sm: 8px;
     --spacing-md: 16px;
     --spacing-lg: 24px;
@@ -82,9 +84,12 @@ body {
     grid-template-columns: 1fr 2fr 1fr;
     grid-template-rows: auto auto;
     gap: var(--spacing-md);
-    padding: var(--spacing-lg);
+    padding: var(--spacing-lg) var(--spacing-lg) calc(380px + var(--spacing-lg)) var(--spacing-lg);
+    /* Added padding at bottom to make space for city skyline */
     max-width: 1400px;
     margin: 0 auto;
+    min-height: calc(100vh - 80px);
+    /* Subtract header height to ensure grid fills most of viewport */
 }
 
 
@@ -292,8 +297,8 @@ body {
 }
 
 .status-tag.in-progress {
-    background-color: rgba(32, 178, 170, 0.2);
-    color: var(--accent-green);
+    background-color: rgba(192, 192, 192, 0.2);
+    color: var(--accent-silver);
 }
 
 .timeline-bar {

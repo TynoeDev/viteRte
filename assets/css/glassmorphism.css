@@ -1,0 +1,322 @@
+/* Glassmorphism Design System
+   Consistent visual style for DevFund / Mr Roboto platform
+   Based on the main page design
+*/
+
+:root {
+    /* Color System */
+    --bg-dark: #12151e;
+    --panel-bg: #1a1e2cc4;
+    --text-primary: #ffffff;
+    --text-secondary: #a0a8c0;
+    --accent-blue: #00bfff;
+    --accent-purple: #8a2be2;
+    --accent-silver: #c0c0c0;
+    --accent-platinum: #e5e4e2;
+    --accent-steel: #71797E;
+    --accent-red: #ff4757;
+    --accent-orange: #ffa502;
+    --glow-silver: 0 0 10px rgba(192, 192, 192, 0.7);
+    --glow-platinum: 0 0 10px rgba(229, 228, 226, 0.7);
+    --glow-blue: 0 0 10px rgba(0, 191, 255, 0.7);
+    --glow-purple: 0 0 10px rgba(138, 43, 226, 0.7);
+    /* Glass Effects */
+    --glass-bg: rgba(26, 30, 44, 0.65);
+    --glass-border: rgba(255, 255, 255, 0.08);
+    --glass-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    --glass-hover-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+    --glass-transition: all 0.3s ease;
+}
+
+
+/* Base Glass Style */
+
+.glass-effect {
+    background: var(--glass-bg);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 16px;
+    border: 1px solid var(--glass-border);
+    box-shadow: var(--glass-shadow);
+    transition: var(--glass-transition);
+}
+
+.glass-effect:hover {
+    box-shadow: var(--glass-hover-shadow);
+    transform: translateY(-3px);
+}
+
+
+/* Glass Card Variation */
+
+.glass-card {
+    background: rgba(26, 30, 44, 0.45);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.15);
+    padding: 20px;
+    transition: var(--glass-transition);
+}
+
+.glass-card:hover {
+    box-shadow: 0 8px 25px 0 rgba(0, 0, 0, 0.25);
+}
+
+
+/* Global Theme Overrides */
+
+body.glass-theme {
+    background-color: transparent;
+    /* Changed from var(--bg-dark) to transparent */
+    color: var(--text-primary);
+    position: relative;
+    min-height: 100vh;
+}
+
+
+/* City Skyline Background - Removed */
+
+
+/* Glass Headers */
+
+.glass-header {
+    background: rgba(26, 30, 44, 0.8);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.1);
+}
+
+
+/* Glass Panels */
+
+.glass-panel {
+    background: rgba(26, 30, 44, 0.5);
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+}
+
+
+/* Card and Panel Overrides */
+
+.devfund-header {
+    background: rgba(26, 30, 44, 0.8) !important;
+    backdrop-filter: blur(10px) !important;
+    -webkit-backdrop-filter: blur(10px) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+    box-shadow: 0 4px 15px 0 rgba(0, 0, 0, 0.1) !important;
+}
+
+.dashboard-panel,
+.project-card,
+.feature-card,
+.automation-sidebar,
+.stat-card,
+.dashboard-card,
+.quick-action-btn,
+.automation-status {
+    background: rgba(26, 30, 44, 0.5) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border-radius: 12px !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    box-shadow: 0 8px 20px 0 rgba(0, 0, 0, 0.2) !important;
+    transition: all 0.3s ease !important;
+}
+
+.dashboard-panel:hover,
+.project-card:hover,
+.feature-card:hover,
+.stat-card:hover,
+.dashboard-card:hover,
+.quick-action-btn:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 12px 25px 0 rgba(0, 0, 0, 0.25) !important;
+}
+
+
+/* Button styling */
+
+.button-primary-green,
+.action-btn,
+.project-action-btn,
+.feature-action-btn,
+.new-project-btn {
+    background: linear-gradient(135deg, rgba(192, 192, 192, 0.95), rgba(113, 121, 126, 0.7)) !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    border: 1px solid rgba(255, 255, 255, 0.1) !important;
+    box-shadow: 0 4px 15px 0 rgba(192, 192, 192, 0.4) !important;
+    transition: all 0.3s ease !important;
+}
+
+.button-primary-green:hover,
+.action-btn:hover,
+.project-action-btn:hover,
+.feature-action-btn:hover,
+.new-project-btn:hover {
+    background: linear-gradient(135deg, rgba(229, 228, 226, 1), rgba(192, 192, 192, 0.8)) !important;
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px 0 rgba(229, 228, 226, 0.5) !important;
+}
+
+
+/* Table styling */
+
+table,
+.pipeline-table,
+.process-table {
+    background: rgba(26, 30, 44, 0.3) !important;
+    backdrop-filter: blur(8px) !important;
+    -webkit-backdrop-filter: blur(8px) !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    overflow: hidden !important;
+}
+
+th {
+    background: rgba(26, 30, 44, 0.7) !important;
+    color: var(--text-primary) !important;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.1) !important;
+}
+
+td {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.03) !important;
+}
+
+
+/* Status tags */
+
+.status-tag {
+    border-radius: 12px !important;
+    padding: 4px 12px !important;
+    font-size: 0.75rem !important;
+    font-weight: 500 !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+}
+
+.status-tag.submitted {
+    background: rgba(138, 43, 226, 0.3) !important;
+    border: 1px solid rgba(138, 43, 226, 0.3) !important;
+    color: #ffffff !important;
+}
+
+.status-tag.funded {
+    background: rgba(0, 191, 255, 0.3) !important;
+    border: 1px solid rgba(0, 191, 255, 0.3) !important;
+    color: #ffffff !important;
+}
+
+.status-tag.in-progress {
+    background: rgba(113, 121, 126, 0.3) !important;
+    border: 1px solid rgba(113, 121, 126, 0.3) !important;
+    color: #ffffff !important;
+}
+
+.status-tag.completed {
+    background: rgba(50, 205, 50, 0.3) !important;
+    border: 1px solid rgba(50, 205, 50, 0.3) !important;
+    color: #ffffff !important;
+}
+
+
+/* Input fields */
+
+input,
+select,
+textarea {
+    background: rgba(26, 30, 44, 0.5) !important;
+    border: 1px solid rgba(255, 255, 255, 0.05) !important;
+    border-radius: 8px !important;
+    color: var(--text-primary) !important;
+    backdrop-filter: blur(5px) !important;
+    -webkit-backdrop-filter: blur(5px) !important;
+    transition: all 0.3s ease !important;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+    border-color: rgba(32, 178, 170, 0.5) !important;
+    box-shadow: 0 0 0 2px rgba(32, 178, 170, 0.15) !important;
+    outline: none !important;
+}
+
+
+/* Background effects */
+
+
+/* Removed glass-background that was obscuring the city skyline */
+
+
+/* Timeline styling */
+
+.timeline-bar {
+    background: rgba(255, 255, 255, 0.1) !important;
+    border-radius: 4px !important;
+    overflow: hidden !important;
+}
+
+
+/* Scrollbars */
+
+::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: rgba(32, 178, 170, 0.5);
+    border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: rgba(32, 178, 170, 0.7);
+}
+
+
+/* Card content areas */
+
+.card-content,
+.feature-body,
+.card-body,
+.insight-content {
+    background: rgba(26, 30, 44, 0.3) !important;
+    border-radius: 8px !important;
+    border: 1px solid rgba(255, 255, 255, 0.03) !important;
+}
+
+
+/* Card headers */
+
+.card-header,
+.feature-header,
+.project-header {
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05) !important;
+}
+
+
+/* Glow text */
+
+.glow-text {
+    color: var(--text-primary);
+    text-shadow: var(--glow-green);
+}
+
+.glow-text.blue {
+    text-shadow: var(--glow-blue);
+}
+
+.glow-text.purple {
+    text-shadow: var(--glow-purple);
+}

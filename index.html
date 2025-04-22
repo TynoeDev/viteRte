@@ -12,10 +12,12 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/parallax.css" />
+    <link rel="stylesheet" href="assets/css/glassmorphism.css" />
     <title>Mr Roboto - Interactive Parallax Experience</title>
 </head>
 
-<body class="parallax-body">
+<body class="parallax-body glass-theme">
+    <div class="glass-background"></div>
     <div class="loading-screen">
         <div class="loader">
             <span class="loader-text">LOADING</span>
@@ -45,51 +47,16 @@
         <div class="content-container">
             <h1 class="hero-title" data-text=""></h1>
             <p class="hero-subtitle">Decentralized Funding Through Innovation</p>
-            <!-- Bitcoin Glass Morphism Widget -->
-            <div class="glass-widget bitcoin-widget compact">
-                <div class="widget-header">
-                    <img src="assets/images/coin.png" alt="Bitcoin" class="crypto-icon">
-                    <h3>Bitcoin <span class="currency-code">BTC</span></h3>
-                    <div class="widget-badges">
-                        <span class="badge rank-badge" id="btc-rank">#1</span>
-                        <span class="badge" id="btc-trend">Trend</span>
-                    </div>
-                </div>
-                <div class="widget-body">
-                    <div class="price-container">
-                        <span class="current-price" id="btc-price">Loading...</span>
-                        <span class="price-change" id="btc-change">--</span>
-                    </div>
-                    <div class="widget-mini-chart" id="btc-mini-chart">
-                        <div class="chart-placeholder"></div>
-                    </div>
-                    <div class="widget-stats">
-                        <div class="stat-row">
-                            <div class="stat-item">
-                                <span class="stat-label">24h Vol</span>
-                                <span class="stat-value" id="btc-volume">--</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-label">ATH</span>
-                                <span class="stat-value" id="btc-ath">--</span>
-                            </div>
-                        </div>
-                        <div class="stat-row">
-                            <div class="stat-item">
-                                <span class="stat-label">Market Cap</span>
-                                <span class="stat-value" id="btc-market-cap">--</span>
-                            </div>
-                            <div class="stat-item">
-                                <span class="stat-label">Supply</span>
-                                <span class="stat-value" id="btc-supply">--</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="widget-actions">
-                        <button class="btn-buy">Buy</button>
-                        <button class="btn-sell">Sell</button>
-                    </div>
-                </div>
+            <!-- Cryptocurrency Widgets -->
+            <div class="crypto-widgets-container" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
+                <!-- Bitcoin Widget -->
+                <div id="bitcoin-container" class="glass-widget bitcoin-widget compact"></div>
+
+                <!-- Ethereum Widget -->
+                <div id="ethereum-container" class="glass-widget crypto-widget compact"></div>
+
+                <!-- Solana Widget -->
+                <div id="solana-container" class="glass-widget crypto-widget compact"></div>
             </div>
 
             <div class="hero-cta">
@@ -129,113 +96,20 @@
         <script src="assets/js/parallax.js"></script>
         <script src="assets/js/interactive.js"></script>
         <script src="assets/js/3d-scene.js"></script>
-        <!-- Bitcoin Widget Live Data -->
+        <!-- Cryptocurrency Data Handler -->
+        <script src="assets/js/crypto-handler.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                // Function to format large numbers with commas and abbreviations
-                function formatNumber(num) {
-                    if (num >= 1e12) return (num / 1e12).toFixed(2) + 'T';
-                    if (num >= 1e9) return (num / 1e9).toFixed(2) + 'B';
-                    if (num >= 1e6) return (num / 1e6).toFixed(2) + 'M';
-                    if (num >= 1e3) return (num / 1e3).toFixed(2) + 'K';
-                    return num.toFixed(2);
-                }
-
-                // Function to format currency values
-                function formatCurrency(num) {
-                    return new Intl.NumberFormat('en-US', {
-                        style: 'currency',
-                        currency: 'USD',
-                        maximumFractionDigits: 2
-                    }).format(num);
-                }
-
-                // Function to set trend badge
-                function setTrendBadge(priceChange) {
-                    const trendBadge = document.getElementById('btc-trend');
-                    if (priceChange > 3) {
-                        trendBadge.textContent = 'Bullish';
-                        trendBadge.style.background = 'rgba(46, 213, 115, 0.3)';
-                        trendBadge.style.color = '#2ed573';
-                    } else if (priceChange > 0) {
-                        trendBadge.textContent = 'Positive';
-                        trendBadge.style.background = 'rgba(46, 213, 115, 0.2)';
-                        trendBadge.style.color = '#2ed573';
-                    } else if (priceChange > -3) {
-                        trendBadge.textContent = 'Neutral';
-                        trendBadge.style.background = 'rgba(255, 255, 255, 0.15)';
-                        trendBadge.style.color = '#ffffff';
-                    } else {
-                        trendBadge.textContent = 'Bearish';
-                        trendBadge.style.background = 'rgba(255, 71, 87, 0.3)';
-                        trendBadge.style.color = '#ff4757';
-                    }
-                }
-
-                // Add click handlers for buy/sell buttons
-                document.querySelector('.btn-buy').addEventListener('click', function() {
-                    alert('Buy feature coming soon! This would connect to an exchange API.');
+                // Initialize cryptocurrency widgets
+                cryptoHandler.initCryptoWidget('bitcoin', 'bitcoin-container', {
+                    compact: true
                 });
-
-                document.querySelector('.btn-sell').addEventListener('click', function() {
-                    alert('Sell feature coming soon! This would connect to an exchange API.');
+                cryptoHandler.initCryptoWidget('ethereum', 'ethereum-container', {
+                    compact: true
                 });
-
-                // Function to fetch BTC data from CoinGecko API
-                function fetchBitcoinData() {
-                    fetch('https://api.coingecko.com/api/v3/coins/bitcoin?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false')
-                        .then(response => response.json())
-                        .then(data => {
-                            const price = data.market_data.current_price.usd;
-                            const priceChange24h = data.market_data.price_change_percentage_24h;
-                            const volume = data.market_data.total_volume.usd;
-                            const marketCap = data.market_data.market_cap.usd;
-                            const ath = data.market_data.ath.usd;
-                            const circulatingSupply = data.market_data.circulating_supply;
-
-                            // Set market rank
-                            document.getElementById('btc-rank').textContent = '#' + data.market_cap_rank;
-
-                            // Update the DOM elements with the fetched data
-                            document.getElementById('btc-price').textContent = formatCurrency(price);
-
-                            const changeElement = document.getElementById('btc-change');
-                            changeElement.textContent = priceChange24h.toFixed(2) + '%';
-
-                            // Add appropriate class based on price change direction
-                            if (priceChange24h > 0) {
-                                changeElement.className = 'price-change positive';
-                                changeElement.textContent = '+' + changeElement.textContent;
-                            } else if (priceChange24h < 0) {
-                                changeElement.className = 'price-change negative';
-                            }
-
-                            // Update trend indicator
-                            setTrendBadge(priceChange24h);
-
-                            // Update standard stats
-                            document.getElementById('btc-volume').textContent = formatNumber(volume);
-                            document.getElementById('btc-market-cap').textContent = formatNumber(marketCap);
-
-                            // Update new stats
-                            document.getElementById('btc-ath').textContent = formatCurrency(ath);
-                            document.getElementById('btc-supply').textContent = formatNumber(circulatingSupply);
-
-                            // Here we would normally update the chart
-                            // For now we just have a placeholder
-                        })
-                        .catch(error => {
-                            console.error('Error fetching Bitcoin data:', error);
-                            document.getElementById('btc-price').textContent = 'API Error';
-                        });
-                }
-
-                // Initial call to fetch data
-                fetchBitcoinData();
-
-                // Update every 1 minute (60000 ms)
-                // Note: CoinGecko's free API has rate limits, adjust as needed
-                setInterval(fetchBitcoinData, 60000);
+                cryptoHandler.initCryptoWidget('solana', 'solana-container', {
+                    compact: true
+                });
             });
         </script>
 </body>
