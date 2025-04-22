@@ -1,739 +1,243 @@
 <!DOCTYPE html>
 <html lang="en">
-<!-- Mirrored from memeco-html-bootstrap.vercel.app/home-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 19 Apr 2025 05:51:37 GMT -->
-<!-- Added by HTTrack -->
-<meta http-equiv="content-type" content="text/html;charset=utf-8" />
-<!-- /Added by HTTrack -->
 
 <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width,initial-scale=1" />
     <meta name="description" content="Mr Roboto - Decentralized funding for technological and scientific initiatives in developing regions using Blockchain, AI, and RPA concepts." />
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
-    <link rel="stylesheet" href="../cdn.jsdelivr.net/npm/swiper%4011/swiper-bundle.min.css" />
-    <link href="../unpkg.com/aos%402.3.1/dist/aos.css" rel="stylesheet" />
-    <link rel="stylesheet" href="../cdn.jsdelivr.net/npm/%40phosphor-icons/web%402.1.1/src/regular/style.css" />
-    <link rel="stylesheet" href="../cdn.jsdelivr.net/npm/%40phosphor-icons/web%402.1.1/src/fill/style.css" />
-    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon" />
-    <title>Mr Roboto - Funding Innovation in Developing Regions</title>
-    <link href="assets/css/style.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css" />
+    <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/regular/style.css" />
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@phosphor-icons/web@2.1.1/src/fill/style.css" />
+    <link rel="stylesheet" href="assets/css/style.css" />
+    <link rel="stylesheet" href="assets/css/parallax.css" />
+    <title>Mr Roboto - Interactive Parallax Experience</title>
 </head>
 
-<body class="position-relative bg-black text-base text-white">
-    <main>
-        <button class="scroll-top">
-        <svg
-          xmlns="http://www.w3.org/2000/svg"
-          width="24"
-          height="24"
-          fill="#7ae4e6"
-          viewBox="0 0 256 256" 
-        >
-          <path
-            d="M205.66,117.66a8,8,0,0,1-11.32,0L136,59.31V216a8,8,0,0,1-16,0V59.31L61.66,117.66a8,8,0,0,1-11.32-11.32l72-72a8,8,0,0,1,11.32,0l72,72A8,8,0,0,1,205.66,117.66Z"
-          ></path>
-        </svg>
-      </button>
-        <div class="position-relative mobile-menu-container w-100 d-block d-xl-none">
-            <div id="overlay" class="mobile-menu-overlay"></div>
-            <nav class="mobile-navbar">
-                <div class="container">
-                    <div class="d-flex position-relative align-items-center justify-content-between px-3 py-3 py-md-5">
-                        <a href="index.html" class=""><img src="assets/images/logo-1.png" width="172" height="47" alt="Mr Roboto logo" /> </a><button id="menuToggle" class="cursor-pointer p-2">
-                <i class="ph ph-list"></i>
-              </button>
-                    </div>
-                </div>
-            </nav>
-            <div id="mobileMenu" class="mobile-sidebar">
-                <div class="d-flex items-center justify-between px-6 py-4">
-                    <img src="assets/images/logo-2.png" width="172" height="47" alt="Mr Roboto logo" />
-                    <button id="closeMenu" aria-label="mobile menu close" class="cursor-pointer">
-              <i class="ph ph-x text-[24px]"></i>
-            </button>
-                </div>
-                <ul class="d-flex flex-column gap-3 px-3">
-                    <li class="w-100">
-                        <button class="mobile-sub-menu d-flex w-100 align-items-center justify-content-between rounded-lg px-3 py-2">
-                            <span class="text-lg">Home</span>
-                            <i class="ph ph-plus text-[24px]"></i>
-                        </button>
-                        <div class="submenu">
-                            <ul class="ms-4 mt-3 d-flex flex-column gap-2">
-                                <li>
-                                    <a href="index.html" class="m-text inline-flex w-full rounded-lg px-5 py-2">- Home (Mr Roboto)</a > <!-- Example: Update if multiple home versions exist -->
-                                </li>
-                            </ul>
-                        </div>
-                    </li>
-                    <li class="w-full">
-                        <a href="#how-it-works" class="m-text inline-flex w-full mobile-single-menu d-block text-black px-5 py-2">How It Works</a>
-                                    <!-- Changed from How To Buy -->
-                                </li>
-                                <li class="w-full">
-                                    <a href="#about" class="m-text inline-flex w-full mobile-single-menu d-block text-black px-5 py-2">About</a>
-                                </li>
-                                <li class="w-full">
-                                    <a href="#tokenomics" class="m-text inline-flex w-full mobile-single-menu d-block text-black px-5 py-2">Tokenomics</a>
-                                </li>
-                                <li class="w-full">
-                                    <a href="#roadmap" class="m-text inline-flex w-full mobile-single-menu d-block text-black px-5 py-2">Roadmap</a>
-                                </li>
-                                <li class="w-full">
-                                    <a href="#faq" class="m-text inline-flex w-full mobile-single-menu d-block text-black px-5 py-2">Faqs</a>
-                                </li>
-                                <li class="w-full">
-                                    <a href="#contact" class="m-text inline-flex w-full mobile-single-menu d-block text-black px-5 py-2">Contact</a>
-                                </li>
-                            </ul>
-                        </div>
-            </div>
-            <header class="desktop-nav-container home-three-navbar fixed-top z-50 w-full px-5 px-4xl-0 d-xl-block d-none">
-                <span class="position-absolute navbar-line bottom-0 left-0 d-none d-md-block"><span class="line"></span
-        ></span>
-                <div class="custom-container d-flex align-items-center justify-content-between">
-                    <div>
-                        <a href="index.html"><img src="assets/images/logo-1.png" alt="Mr Roboto logo" /></a>
-                    </div>
-                    <ul class="d-flex menu-items align-items-center justify-content-between gap-3 gap-xxl-5">
-                        <li class="dropdown-item position-relative">
-                            <button class="dropdown-btn home-3-nav-item">
-                                    Home <i class="ph ph-caret-down text-lg"></i>
-                                </button>
-                            <ul class="dropdown-menu two d-block">
-                                <li><a class="menu-link two" href="index.html">Home (Mr Roboto)</a></li>
-                                <!-- Example: Update if multiple home versions exist -->
-                            </ul>
-                        </li>
-                        <li class="list-none">
-                            <a href="#how-it-works" class="home-3-nav-item">HOW IT WORKS</a>
-                            <!-- Changed from HOW TO BUY -->
-                        </li>
-                        <li class="list-none">
-                            <a href="#about" class="home-3-nav-item">About</a>
-                        </li>
-                        <li class="list-none">
-                            <a href="#tokenomics" class="home-3-nav-item">TOKENOMICS</a>
-                        </li>
-                        <li class="list-none">
-                            <a href="#roadmap" class="home-3-nav-item">ROADMAP</a>
-                        </li>
-                        <li class="list-none">
-                            <a href="#faq" class="home-3-nav-item">FAQ</a>
-                        </li>
-                        <li class="list-none">
-                            <a href="#contact" class="home-3-nav-item">contact</a>
-                        </li>
-                    </ul>
-                    <a href="wallet-dashboard.html" class="button-primary-green">Get Involved</a>
-                    <!-- Changed from Get Started -->
-                </div>
-            </header>
-            <section class="noise position-relative overflow-hidden home-three-banner bg-repeat">
-                <img src="assets/images/home-3-banner-top-blur.webp" alt="Image" class="position-absolute banner-top-blur" />
-                <img src="assets/images/home-3-banner-middle-blur.webp" alt="Image" class="position-absolute banner-middle-blur" />
-                <img src="assets/images/home-3-banner-bottom-element.webp" alt="Image" class="position-absolute banner-bottom-element" />
-                <img src="assets/images/home-3-banner-line-bg.webp" alt="Image" class="position-absolute banner-line-bg" />
-                <img src="assets/images/home-3-banner-bottom-blur.webp" alt="Image" class="position-absolute banner-bottom-blur" />
-                <div class="d-none d-lg-block">
-                    <img src="assets/images/home-3-banner-icon-1.png" alt="Image" class="animated-image banner-icon-1 position-absolute z-10" />
-                    <img src="assets/images/home-3-banner-icon-2.png" class="animated-image banner-icon-2 position-absolute z-10" alt="Image" />
-                    <img src="assets/images/home-3-banner-icon-3.png" class="animated-image banner-icon-3 position-absolute z-10" alt="Image" />
-                    <img src="assets/images/home-3-banner-icon-4.png" class="animated-image banner-icon-4 position-absolute z-10" alt="Image" />
-                    <img src="assets/images/home-3-banner-icon-5.png" class="animated-image banner-icon-5 position-absolute z-10" alt="Image" />
-                    <img src="assets/images/home-3-banner-icon-6.png" class="animated-image banner-icon-6 position-absolute z-10" alt="Image" />
-                    <img src="assets/images/home-3-banner-icon-7.png" class="animated-image banner-icon-7 position-absolute z-10" alt="Image" />
-                    <img src="assets/images/home-3-banner-icon-8.png" class="animated-image banner-icon-8 position-absolute z-10" alt="Image" />
-                </div>
-                <div class="container position-relative z-20">
-                    <h1 class="d3 split_anim mx-auto section-title text-center font-title-font text-uppercase">
-                        Mr Roboto: Funding the Future
-                    </h1>
-                    <p class="l-text reveal_anim mx-auto section-text pt-6 text-center">
-                        A decentralized platform using Blockchain, AI, and RPA concepts to fund tech & science in developing regions. Join us to drive global innovation.
-                    </p>
-                    <div class="reveal_anim d-flex align-items-center justify-content-center smt40px" data-reveal-from="bottom">
-                        <img src="assets/images/home-3-banner.webp" alt="Mr Roboto Banner Image" class="animate-top-bottom" />
-                    </div>
-                </div>
-                <div class="position-relative z-20 marquee-section overflow-hidden font-title-font pb-lg-15" data-reveal-from="right">
-                    <div class="animated-text-strip sp40px text h2 marquee-1 bg-black">
-                        <span class="marquee big-text">💡 Transparent Funding via Blockchain </span
-            ><span class="marquee big-text"
-              >💡 Transparent Funding via Blockchain </span
-            ><span class="marquee big-text"
-              >💡 Transparent Funding via Blockchain </span
-            ><span class="marquee big-text"
-              >💡 Transparent Funding via Blockchain </span
-            ><span class="marquee big-text"
-              >💡 Transparent Funding via Blockchain </span
-            ><span class="marquee big-text"
-              >💡 Transparent Funding via Blockchain</span
-            >
-          </div>
-          <div
-            class="animated-text-strip marquee-2 text h2 bg-black text-white sp40px"
-          >
-            <span class="marquee-alt big-text"
-              >🌍 Empowering Innovation Worldwide </span
-            ><span class="marquee-alt big-text"
-              >🌍 Empowering Innovation Worldwide</span
-            >
-            <span class="marquee-alt big-text"
-              >🌍 Empowering Innovation Worldwide</span
-            >
-            <span class="marquee-alt big-text"
-              >🌍 Empowering Innovation Worldwide </span
-            ><span class="marquee-alt big-text"
-              >🌍 Empowering Innovation Worldwide</span
-            >
-            <span class="marquee-alt big-text"
-              >🌍 Empowering Innovation Worldwide</span
-            >
-          </div>
+<body class="parallax-body">
+    <div class="loading-screen">
+        <div class="loader">
+            <span class="loader-text">LOADING</span>
+            <div class="loader-bar"></div>
         </div>
-      </section>
-      <section
-        class="position-relative overflow-hidden home-three-how-to-buy spy120px"
-        id="how-it-works" <!-- Changed ID -->
-      >
-        <img
-          src="assets/images/home-3-how-to-buy-shade.webp"
-          alt=""
-          class="position-absolute shade bottom-0 translate-y-1/2 blur-3xl"
-        />
-        <div class="container">
-          <h3 class="title-white split_anim text-center">How Mr Roboto Works</h3> <!-- Changed Title -->
-          <p class="m-text reveal_anim mx-auto mt-6 section-text text-center">
-            Mr Roboto utilizes a unique blend of technologies to ensure transparent and efficient funding for impactful projects.
-          </p>
-          <div class="spt60px">
-            <div class="row row-cols-1 g-3 row-cols-lg-3 g-lg-6">
-              <div
-                class="reveal_anim pt-8 pt-lg-10 pt-xl-15"
-                data-reveal-from="left"
-              >
-                <div class="how-to-buy-3"> <!-- Keep class for styling, update content -->
-                  <div class="how-to-buy-number">01</div>
-                  <img src="assets/images/how-to-buy-3.1.png" alt="Blockchain Icon" />
-                  <h4 class="h4 mx-auto max-w-[250px] font-title-font spt40px">
-                    Blockchain Transparency
-                  </h4>
-                  <p class="l-text mt-4 opacity-90">
-                    All transactions and decisions are recorded immutably on the blockchain for complete visibility.
-                  </p>
-                </div>
-              </div>
-              <div
-                class="reveal_anim pt-8 pt-lg-10 pt-xl-15"
-                data-reveal-from="bottom"
-              >
-                <div class="how-to-buy-3"> <!-- Keep class for styling, update content -->
-                  <div class="how-to-buy-number">02</div>
-                  <img src="assets/images/how-to-buy-3.2.png" alt="AI Icon" />
-                  <h4 class="h4 mx-auto max-w-[250px] font-title-font spt40px">
-                    AI-Driven Analysis
-                  </h4>
-                  <p class="l-text mt-4 opacity-90">
-                    Artificial intelligence assesses grant applications, prioritizing projects with high impact potential.
-                  </p>
-                </div>
-              </div>
-              <div
-                class="reveal_anim pt-8 pt-lg-10 pt-xl-15"
-                data-reveal-from="right"
-              >
-                <div class="how-to-buy-3"> <!-- Keep class for styling, update content -->
-                  <div class="how-to-buy-number">03</div>
-                  <img src="assets/images/how-to-buy-3.3.png" alt="DAO Icon" />
-                  <h4 class="h4 mx-auto max-w-[250px] font-title-font spt40px">
-                    DAO Governance
-                  </h4>
-                  <p class="l-text mt-4 opacity-90">
-                    Token holders participate in decision-making through a decentralized autonomous organization.
-                  </p>
-                </div>
-              </div>
+    </div>
+
+    <header class="main-header">
+        <div class="header-container">
+            <div class="logo">
+                <a href="index.html"><img src="assets/images/logo-1.png" alt="Logo" /></a>
             </div>
-          </div>
-        </div>
-      </section>
-      <section
-        class="position-relative home-three-welcome overflow-hidden bg-black spy120px"
-        id="about"
-      >
-        <div class="custom-container">
-          <p
-            class="overlay-text-content-3 mx-auto text-center font-title-font big-text"
-          >
-            Mr Roboto <!-- Changed from MEMECO -->
-          </p>
-          <img
-            src="assets/images/home-3-welcome-bluer.png"
-            alt="Image"
-            class="position-absolute welcome-bluer z-0"
-          />
-          <div class="container position-relative z-10 g-6 row">
-            <div class="reveal_anim position-relative col-lg-6">
-              <img
-                src="assets/images/home-3-welcome.webp"
-                alt="Mr Roboto About Image"
-              />
-            </div>
-            <div class="col-lg-5">
-              <h3 class="title-white split_anim">Addressing the Global Funding Gap</h3> <!-- Changed Title -->
-              <h5 class="h6 reveal_anim mt-6 font-title-font">
-                The Challenge Mr Roboto Solves
-              </h5>
-              <p class="m-text reveal_anim pt-4 opacity-90">
-                Developing regions face significant barriers accessing capital for vital technological and scientific initiatives. Traditional funding suffers from inefficiency, lack of transparency, high overhead, and misalignment with local needs, hindering progress and innovation where it's needed most.
-              </p>
-              <h5 class="h6 reveal_anim mt-6 font-title-font">
-                Our Innovative Solution
-              </h5>
-              <p class="m-text reveal_anim pt-4 opacity-90">
-                Mr Roboto introduces a decentralized, transparent, and automated funding mechanism leveraging blockchain, AI, and RPA concepts to overcome these limitations.
-              </p>
-              <ul class="reveal_anim d-flex flex-column gap-3 pt-6 xxl:gap-4">
-                <li class="d-flex align-items-center gap-2">
-                  <i class="ph-fill ph-check-square"></i>
-                  <span>Transparent on-chain funding & governance.</span>
-                        <!-- Updated bullet point -->
-                        </li>
-                        <li class="d-flex align-items-center gap-2">
-                            <i class="ph-fill ph-check-square"></i>
-                            <span>Automated grants via smart contracts.</span>
-                            <!-- Updated bullet point -->
-                        </li>
-                        <li class="d-flex align-items-center gap-2">
-                            <i class="ph-fill ph-check-square"></i>
-                            <span>AI-driven impact analytics for project selection.</span>
-                            <!-- Updated bullet point -->
-                        </li>
-                        <li class="d-flex align-items-center gap-2">
-                            <i class="ph-fill ph-check-square"></i>
-                            <span>Sustainable funding model independent of donors.</span>
-                            <!-- Added bullet point -->
-                        </li>
-                        </ul>
-                        <div class="spt40px">
-                            <!-- Optional: Link to Whitepaper or Learn More section -->
-                            <a href="#tokenomics" class="button-primary-green">Learn More</a>
-                        </div>
-                        <!-- Removed the staking rewards box -->
-                    </div>
-                </div>
-        </div>
-        </section>
-        <section class="position-relative home-three-tokenomics spy120px" id="tokenomics">
-            <img src="assets/images/home-3-tokenomics-blure.png" alt="Image" class="position-absolute tokenomics-blur" />
-            <div class="container position-relative">
-                <div class="text-center">
-                    <h3 class="title-white split_anim">Mr Roboto Tokenomics</h3>
-                    <p class="m-text reveal_anim mx-auto section-text pt-4 opacity-90 pt-xl-6">
-                        Our token model is designed for sustainability, transparency, and community governance, fueling impactful projects worldwide.
-                    </p>
-                </div>
-                <div class="reveal_anim position-relative d-flex align-items-center gap-6 smt120px flex-column flex-md-row justify-content-xxl-center" data-reveal-from="bottom">
-                    <img src="assets/images/home-3-tokenomics.webp" alt="Mr Roboto Tokenomics Chart" class="position-relative z-10" />
-                    <div class="flex-wrap gap-6 d-flex flex-md-column d-xxl-block">
-                        <!-- NOTE: Update percentages and token amounts based on actual Mr Roboto tokenomics -->
-                        <div class="info-one">
-                            <div>
-                                <p class="lead-text fw-semibold">Grant Funding: [X]%</p>
-                                <p class="l-text pt-2">([X] Tokens)</p>
-                            </div>
-                            <img src="assets/images/home-3-airdrop-left.png" alt="Line" class="z-10 mt-6 d-none d-xxl-block" />
-                        </div>
-                        <div class="info-two">
-                            <div>
-                                <p class="lead-text fw-semibold">Staking Rewards: [Y]%</p>
-                                <p class="l-text pt-2">([Y] Tokens)</p>
-                            </div>
-                            <img src="assets/images/home-3-marketing.png" alt="Line" class="mt-6 d-none d-xxl-block" />
-                        </div>
-                        <div class="info-three">
-                            <div class="pb-xxl-10">
-                                <img src="assets/images/home-3-staking.png" alt="Line" class="d-none d-xxl-block" />
-                                <p class="lead-text fw-semibold xxl:mt-6">Team & Advisors: [Z]%</p>
-                                <p class="l-text pt-2">([Z] Tokens)</p>
-                            </div>
-                        </div>
-                        <div class="info-four">
-                            <div class="pb-xxl-10">
-                                <img src="assets/images/home-3-presale.png" alt="Line" class="d-none d-xxl-block" />
-                                <div class="text-xxl-end">
-                                    <p class="lead-text fw-semibold mt-xxl-6">Ecosystem Growth: [A]%</p>
-                                    <p class="l-text pt-2">([A] Tokens)</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="info-five pt-3">
-                            <div>
-                                <div class="text-xxl-end">
-                                    <p class="lead-text fw-semibold">Public/Private Sale: [B]%</p>
-                                    <p class="l-text pt-2">([B] Tokens)</p>
-                                    <img src="assets/images/home-3-airdrop-right.png" alt="Line" class="mt-6 d-none d-xxl-block" />
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="position-relative home-three-roadmap bg-black spy120px" id="roadmap">
-            <div class="container row-cols-12 gap-6 row">
-                <div class="col-lg-3 d-none d-lg-block">
-                    <h3 class="our-story-3 m-0">ROADMAP</h3>
-                </div>
-                <div class="position-relative col-lg-8">
-                    <div class="d-none d-xl-block">
-                        <div class="position-absolute line"></div>
-                        <div class="position-absolute dot"></div>
-                        <div class="position-absolute dot-2"></div>
-                        <div class="position-absolute dot-3"></div>
-                        <div class="position-absolute dot-4"></div>
-                    </div>
-                    <div class="d-flex flex-column gap-6 lg:gap-12">
-                        <!-- NOTE: Update Phase details based on actual Mr Roboto roadmap -->
-                        <div class="roadmap-border sp32px">
-                            <p class="h5 d-flex align-items-center gap-2 fw-semibold">
-                                📍 Phase 1: Foundation & Launch
-                            </p>
-                            <h4 class="h3 pt-6 font-title-font">Building the Core</h4>
-                            <ul class="d-flex flex-wrap gap-5 smt80px">
-                                <li class="d-flex align-items-center justify-content-center gap-2">
-                                    <img src="assets/images/star-green.png" alt="" /> Platform Development
-                                </li>
-                                <li class="d-flex align-items-center justify-content-center gap-2">
-                                    <img src="assets/images/star-green.png" alt="" /> Smart Contract Audits
-                                </li>
-                                <li class="d-flex align-items-center justify-content-center gap-2">
-                                    <img src="assets/images/star-green.png" alt="" /> Token Generation Event (TGE)
-                                </li>
-                                <li class="d-flex align-items-center justify-content-center gap-2">
-                                    <img src="assets/images/star-green.png" alt="" /> Initial Exchange Listings
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="sp32px roadmap-border">
-                            <p class="h5 d-flex align-items-center gap-2 fw-semibold">
-                                📍 Phase 2: Pilot & Growth
-                            </p>
-                            <h4 class="h3 pt-6 font-title-font">First Impact Initiatives</h4>
-                            <ul class="d-flex flex-wrap gap-5 smt80px">
-                                <li class="d-flex align-items-center justify-content-center gap-2">
-                                    <img src="assets/images/star-green.png" alt="" /> Launch Pilot Grant Program
-                                </li>
-                                <li class="d-flex align-items-center justify-content-center gap-2">
-                                    <img src="assets/images/star-green.png" alt="" /> AI Impact Analysis V1
-                                </li>
-                                <li class="d-flex align-items-center justify-content-center gap-2">
-                                    <img src="assets/images/star-green.png" alt="" /> DAO Governance V1 Launch
-                                </li>
-                                <li class="d-flex align-items-center justify-content-center gap-2">
-                                    <img src="assets/images/star-green.png" alt="" /> Community Building
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="sp32px roadmap-border">
-                            <p class="h5 d-flex align-items-center gap-2 fw-semibold">
-                                📍 Phase 3: Scaling & Expansion
-                            </p>
-                            <h4 class="h3 pt-6 font-title-font">Broadening Reach</h4>
-                            <ul class="d-flex flex-wrap gap-5 smt80px">
-                                <li class="d-flex align-items-center justify-content-center gap-2">
-                                    <img src="assets/images/star-green.png" alt="" /> Expand Grant Categories
-                                </li>
-                                <li class="d-flex align-items-center justify-content-center gap-2">
-                                    <img src="assets/images/star-green.png" alt="" /> Strategic Partnerships
-                                </li>
-                                <li class="d-flex align-items-center justify-content-center gap-2">
-                                    <img src="assets/images/star-green.png" alt="" /> Enhanced AI Analytics V2
-                                </li>
-                                <li class="d-flex align-items-center justify-content-center gap-2">
-                                    <img src="assets/images/star-green.png" alt="" /> Cross-Chain Integration Research
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="sp32px roadmap-border">
-                            <p class="h5 d-flex align-items-center gap-2 fw-semibold">
-                                📍 Phase 4: Ecosystem Maturation
-                            </p>
-                            <h4 class="h3 pt-6 font-title-font">Sustainable Impact Network</h4>
-                            <ul class="d-flex flex-wrap gap-5 smt80px">
-                                <li class="d-flex align-items-center justify-content-center gap-2">
-                                    <img src="assets/images/star-green.png" alt="" /> Fully Decentralized Grant Cycle
-                                </li>
-                                <li class="d-flex align-items-center justify-content-center gap-2">
-                                    <img src="assets/images/star-green.png" alt="" /> Global Impact Measurement Framework
-                                </li>
-                                <li class="d-flex align-items-center justify-content-center gap-2">
-                                    <img src="assets/images/star-green.png" alt="" /> Long-term Sustainability Initiatives
-                                </li>
-                            </ul>
-                        </div>
-                        <div class="smt32px">
-                            <a href="#contact" class="button-primary-green">GET INVOLVED</a>
-                            <!-- Changed text -->
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <section class="position-relative overflow-hidden spy120px home-three-faq" id="faq">
-            <img src="assets/images/home-3-faq-blur.webp" alt="Image" class="position-absolute faq-blur" />
-            <div class="container row justify-content-between align-content-center">
-                <div class="col-lg-7 col-xxl-6">
-                    <h3 class="title-white split_anim">FAQs</h3>
-                    <p class="section-text reveal_anim section-text">
-                        Have questions about Mr Roboto? Find answers to common inquiries about our mission, technology, and how to participate.
-                    </p>
-                    <div class="reveal_anim d-flex flex-column gap-4 spt60px">
-                        <!-- NOTE: Replace with actual Mr Roboto FAQs -->
-                        <div class="appear-down p-4 p-sm-6">
-                            <div class="faq-accordion d-flex cursor-pointer align-items-center justify-content-between gap-2 duration-300 sm:gap-6">
-                                <div class="d-flex align-items-center gap-4">
-                                    <h6 class="lead-text fw-bold">
-                                        1. What is Mr Roboto?
-                                    </h6>
-                                </div>
-                                <div class="faq-icon d-flex align-items-center justify-content-center">
-                                    <i class="ph-fill ph-caret-down"></i>
-                                </div>
-                            </div>
-                            <div class="faq-answer h-0 overflow-hidden duration-300">
-                                <p class="l-text mt-4 opacity-80">
-                                    Mr Roboto is a decentralized funding platform using blockchain, AI, and RPA concepts to support technological and scientific projects in developing regions, aiming for transparency and efficiency.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="appear-down p-4 p-sm-6">
-                            <div class="faq-accordion d-flex cursor-pointer align-items-center justify-content-between gap-2 duration-300 sm:gap-6">
-                                <div class="d-flex align-items-center gap-4">
-                                    <h6 class="lead-text fw-bold">
-                                        2. How does the AI analysis work?
-                                    </h6>
-                                </div>
-                                <div class="faq-icon d-flex align-items-center justify-content-center">
-                                    <i class="ph-fill ph-caret-down"></i>
-                                </div>
-                            </div>
-                            <div class="faq-answer h-0 overflow-hidden duration-300">
-                                <p class="l-text mt-4 opacity-80">
-                                    Our AI models analyze grant applications based on predefined criteria like potential impact, feasibility, team strength, and alignment with our goals to help prioritize funding allocation.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="appear-down p-4 p-sm-6">
-                            <div class="faq-accordion d-flex cursor-pointer align-items-center justify-content-between gap-2 duration-300 sm:gap-6">
-                                <div class="d-flex align-items-center gap-4">
-                                    <h6 class="lead-text fw-bold">
-                                        3. How can I get involved?
-                                    </h6>
-                                </div>
-                                <div class="faq-icon d-flex align-items-center justify-content-center">
-                                    <i class="ph-fill ph-caret-down"></i>
-                                </div>
-                            </div>
-                            <div class="faq-answer h-0 overflow-hidden duration-300">
-                                <p class="l-text mt-4 opacity-80">
-                                    You can get involved by acquiring Mr Roboto tokens, participating in the DAO governance, staking tokens, or following our project updates and spreading the word. Details on token acquisition will be available soon.
-                                </p>
-                            </div>
-                        </div>
-                        <div class="appear-down p-4 p-sm-6">
-                            <div class="faq-accordion d-flex cursor-pointer align-items-center justify-content-between gap-2 duration-300 sm:gap-6">
-                                <div class="d-flex align-items-center gap-4">
-                                    <h6 class="lead-text fw-bold">
-                                        4. Is Mr Roboto a charity?
-                                    </h6>
-                                </div>
-                                <div class="faq-icon d-flex align-items-center justify-content-center">
-                                    <i class="ph-fill ph-caret-down"></i>
-                                </div>
-                            </div>
-                            <div class="faq-answer h-0 overflow-hidden duration-300">
-                                <p class="l-text mt-4 opacity-80">
-                                    Mr Roboto is a purpose-driven project focused on philanthropic outcomes. It uses a decentralized token model to create a sustainable funding mechanism for specific development goals, governed by its token holders.
-                                </p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-                <div class="reveal_anim col-5 col-start-8 d-none d-lg-block" data-reveal-from="right">
-                    <img src="assets/images/home-3-faq.webp" alt="FAQ Image" class="section-image" />
-                </div>
-            </div>
-        </section>
-        <section class="position-relative home-three-presale-live spy120px" id="contact">
-            <!-- Changed ID, repurposed section -->
-            <div class="container position-relative">
-                <div class="text-center">
-                    <h3 class="title-white split_anim">Get Involved with Mr Roboto</h3>
-                    <!-- Changed Title -->
-                    <p class="m-text reveal_anim mx-auto section-text pt-4 opacity-90 xl:pt-6">
-                        Join our community, participate in governance, and help shape the future of decentralized funding for global innovation.
-                    </p>
-                </div>
-                <div class="g-6 smt60px justify-content-between row">
-                    <div class="reveal_anim col-xl-5 d-flex flex-column gap-5">
-                        <!-- Replaced presale steps with contact/community info -->
-                        <div class="presale-border-3 p-6">
-                            <img src="assets/images/presale-live-icon-1.png" alt="Community Icon" />
-                            <!-- Consider changing icon -->
-                            <p class="lead-text mt-5 fw-bold">Join the Community</p>
-                            <p class="m-text mt-2">
-                                Connect with us on [Social Media Platform, e.g., Telegram, Discord] to stay updated and engage with other members. [Link Placeholder]
-                            </p>
-                        </div>
-                        <div class="presale-border-3 p-6">
-                            <img src="assets/images/presale-live-icon-2.png" alt="Governance Icon" />
-                            <!-- Consider changing icon -->
-                            <p class="lead-text mt-5 fw-bold">Participate in Governance</p>
-                            <p class="m-text mt-2">
-                                Mr Roboto token holders can vote on proposals and influence the project's direction via our DAO. [Link Placeholder]
-                            </p>
-                        </div>
-                        <div class="presale-border-3 p-6">
-                            <img src="assets/images/presale-live-icon-3.png" alt="Newsletter Icon" />
-                            <!-- Consider changing icon -->
-                            <p class="lead-text mt-5 fw-bold">Stay Informed</p>
-                            <p class="m-text mt-2">
-                                Subscribe to our newsletter for the latest news, project milestones, and grant announcements. (See footer)
-                            </p>
-                        </div>
-                    </div>
-                    <div class="reveal_anim col-xl-7 col-xxl-6" data-reveal-from="right">
-                        <!-- Removed the buy widget, replace with contact form or relevant info if needed -->
-                        <div class="rounded-2xl buy-memeco sp40px text-center">
-                            <h4 class="h4 font-title-font">Contact Us</h4>
-                            <p class="m-text pt-4">For partnerships, inquiries, or more information, please reach out:</p>
-                            <a href="mailto:info@Mr Roboto.org" class="button-primary-green mx-auto block text-center smt32px w-fit">info@Mr Roboto.org</a>
-                            <!-- Placeholder Email -->
-                            <!-- Add links to documentation or whitepaper if available -->
-                            <a href="#" class="m-text d-block text-center fw-semibold underline underline-offset-2 smt40px">[Link to Whitepaper/Docs]</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </section>
-        <footer class="position-relative overflow-hidden home-three-footer bg-black spt100px">
-            <img src="assets/images/footer-gradinet-image.webp" alt="Image" class="position-absolute gradient-image" />
-            <div class="custom-container z-10 bg-black">
-                <div class="row-cols-12 g-6 spx80px row">
-                    <div class="col-md-6 col-xxl-4">
-                        <h5 class="h5 newsletter-title font-title-font text-white">
-                            SUBSCRIBE OUR NEWSLETTER
-                        </h5>
-                        <div class="d-flex newsletter-input-area align-items-center justify-content-between smt32px">
-                            <input placeholder="Enter your email" class="w-full bg-transparent px-2" />
-                            <button class="m-text py-4 text-center fw-medium spx32px">
-                  Subscribe
-                </button>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xxl-3 spb40px">
-                        <img src="assets/images/home-3-footer-logo.png" alt="Mr Roboto Footer Logo" />
-                        <p class="m-text mt-4">
-                            Mr Roboto: Empowering global innovation through decentralized funding. Investment involves risk. Consult financial advisors.
-                        </p>
-                        <div class="mt-6 d-flex align-items-center gap-3 social-media">
-                            <a href="#" class="d-flex cursor-pointer align-items-center justify-center p-3"><i class="ph-fill ph-facebook-logo"></i> </a
-                ><a
-                  href="#"
-                  class="d-flex cursor-pointer align-items-center justify-center p-3"
-                  ><i class="ph-fill ph-instagram-logo"></i> </a
-                ><a
-                  href="#"
-                  class="d-flex cursor-pointer align-items-center justify-center p-3"
-                  ><i class="ph-fill ph-twitter-logo"></i> </a
-                ><a
-                  href="#"
-                  class="d-flex cursor-pointer align-items-center justify-center p-3"
-                  ><i class="ph-fill ph-linkedin-logo"></i
-                ></a>
-                        </div>
-                    </div>
-                    <div class="position-relative col-md-6 col-xxl-2 spb40px">
-                        <div class="md:mx-auto md:w-fit">
-                            <h3 class="h5 font-title-font">Quick Links</h3>
-                            <ul class="mt-6 d-flex flex-column gap-3">
-                                <li>
-                                    <a href="#" class="m-text d-flex align-items-center gap-1 duration-300"><img src="assets/images/star-white.png" alt="Footer Menu Star" />
-                                        <span>Home</span></a>
-                                </li>
-                                <li>
-                                    <a href="#about" class="m-text d-flex align-items-center gap-1 duration-300"><img src="assets/images/star-white.png" alt="Footer Menu Star" />
-                                        <span>About</span></a>
-                                </li>
-                                <li>
-                                    <a href="#roadmap" class="m-text d-flex align-items-center gap-1 duration-300"><img src="assets/images/star-white.png" alt="Footer Menu Star" />
-                                        <span>Roadmap</span></a>
-                                </li>
-                                <li>
-                                    <a href="#tokenomics" class="m-text d-flex align-items-center gap-1 duration-300"><img src="assets/images/star-white.png" alt="Footer Menu Star" />
-                                        <span>Tokenomics</span></a>
-                                </li>
-                                <li>
-                                    <a href="#how-it-works" class="m-text d-flex align-items-center gap-1 duration-300"><img src="assets/images/star-white.png" alt="Footer Menu Star" />
-                                        <span>How it Works</span></a>
-                                </li>
-                                <li>
-                                    <a href="#contact" class="m-text d-flex align-items-center gap-1 duration-300"><img src="assets/images/star-white.png" alt="Footer Menu Star" />
-                                        <span>Contact</span></a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-md-6 col-xxl-3 spb40px">
-                        <div class="md:mx-auto md:w-fit">
-                            <h3 class="h5 font-title-font">CONTACT</h3>
-                            <ul class="mt-6 d-flex flex-column gap-6">
-                                <li>
-                                    <a href="#" class="m-text d-flex align-items-center gap-2"><i class="ph ph-map-pin text-[24px]"></i
-                      ><span>[Your Location/Decentralized]</span></a
-                    >
-                  </li>
-                  <li>
-                    <a href="mailto:info@Mr Roboto.org" class="m-text d-flex align-items-center gap-2" <!-- Placeholder Email -->
-                      ><i class="ph ph-envelope-simple-open text-[24px]"></i
-                      ><span>info@Mr Roboto.org</span></a
-                    >
-                  </li>
-                   <!-- Remove phone if not applicable -->
+            <nav class="main-nav">
+                <ul class="nav-list">
+                    <li class="nav-item"><a href="indexapp.html">Home</a></li>
+                    <li class="nav-item"><a href="wallet-dashboard.html">Dashboard</a></li>
+                    <li class="nav-item"><a href="projects.html">Projects</a></li>
+                    <li class="nav-item"><a href="automation.html">Automation</a></li>
                 </ul>
-              </div>
+            </nav>
+            <div class="menu-toggle">
+                <div class="hamburger"></div>
             </div>
-          </div>
         </div>
-        <div class="position-relative">
-          <span class="position-absolute navbar-line"
-            ><span class="line"></span
-          ></span>
-          <div
-            class="custom-container d-flex flex-wrap align-items-center justify-content-center gap-4 py-6 justify-content-sm-between"
-          >
-            <p class="m-text">© Mr Roboto 2025. All rights reserved.</p> <!-- Updated Name & Year -->
-            <div class="d-flex align-items-center gap-6">
-              <a href="#" class="m-text duration-300 hover:text-h1Primary2"
-                >Privacy policy</a
-              >
-              <a href="#" class="m-text duration-300 hover:text-h1Primary2"
-                >Terms of use</a
-              >
+    </header>
+    <main class="parallax-container">
+        <div class="content-container">
+            <h1 class="hero-title" data-text=""></h1>
+            <p class="hero-subtitle">Decentralized Funding Through Innovation</p>
+            <!-- Bitcoin Glass Morphism Widget -->
+            <div class="glass-widget bitcoin-widget compact">
+                <div class="widget-header">
+                    <img src="assets/images/coin.png" alt="Bitcoin" class="crypto-icon">
+                    <h3>Bitcoin <span class="currency-code">BTC</span></h3>
+                    <div class="widget-badges">
+                        <span class="badge rank-badge" id="btc-rank">#1</span>
+                        <span class="badge" id="btc-trend">Trend</span>
+                    </div>
+                </div>
+                <div class="widget-body">
+                    <div class="price-container">
+                        <span class="current-price" id="btc-price">Loading...</span>
+                        <span class="price-change" id="btc-change">--</span>
+                    </div>
+                    <div class="widget-mini-chart" id="btc-mini-chart">
+                        <div class="chart-placeholder"></div>
+                    </div>
+                    <div class="widget-stats">
+                        <div class="stat-row">
+                            <div class="stat-item">
+                                <span class="stat-label">24h Vol</span>
+                                <span class="stat-value" id="btc-volume">--</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">ATH</span>
+                                <span class="stat-value" id="btc-ath">--</span>
+                            </div>
+                        </div>
+                        <div class="stat-row">
+                            <div class="stat-item">
+                                <span class="stat-label">Market Cap</span>
+                                <span class="stat-value" id="btc-market-cap">--</span>
+                            </div>
+                            <div class="stat-item">
+                                <span class="stat-label">Supply</span>
+                                <span class="stat-value" id="btc-supply">--</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="widget-actions">
+                        <button class="btn-buy">Buy</button>
+                        <button class="btn-sell">Sell</button>
+                    </div>
+                </div>
             </div>
-          </div>
+
+            <div class="hero-cta">
+                <a href="wallet-dashboard.html" class="button-primary-green">Dashboard</a>
+                <a href="indexapp.html" class="button-scroll">Explore Web</a>
+            </div>
         </div>
-      </footer>
-    </main>
-    <script src="assets/js/plugins/swiper.min.js"></script>
-    <script src="assets/js/plugins/bootstrap.min.js"></script>
-    <script src="../unpkg.com/aos%402.3.1/dist/aos.js"></script>
-    <script src="../cdn.jsdelivr.net/npm/gsap%403.12.7/dist/gsap.min.js"></script>
-    <script src="../cdn.jsdelivr.net/npm/gsap%403.12.7/dist/ScrollTrigger.min.js"></script>
-    <script src="assets/js/main.js"></script>
-    <script defer="defer" src="assets/js/index.js"></script>
-  </body>
-  <!-- Mirrored from memeco-html-bootstrap.vercel.app/home-3.html by HTTrack Website Copier/3.x [XR&CO'2014], Sat, 19 Apr 2025 05:51:57 GMT -->
+        <!-- Hero Section with Parallax -->
+        <section class="parallax-section hero-section" id="hero">
+            <div class="parallax-layer layer-bg" data-speed="0.2"></div>
+            <!-- Robots Layer -->
+            <div class="parallax-layer robot-layer" data-speed="0.4">
+                <div class="robots-container">
+                    <img src="assets/images/home-3-banner2.png" alt="Tesla Robot" class="robot robot-left" data-speed="0.3">
+                    <img src="assets/images/home-3-tokenomics2.png" alt="Optimus Robot" class="robot robot-right" data-speed="0.5">
+                </div>
+            </div>
+            <!-- Coin Layers -->
+            <div class="parallax-layer layer-1" data-speed="0.5">
+                <img src="assets/images/coin-icon-1.png" alt="Parallax Element 1" class="parallax-element elem-1">
+                <img src="assets/images/coin-icon-2.png" alt="Parallax Element 2" class="parallax-element elem-2">
+            </div>
+            <div class="parallax-layer layer-2" data-speed="0.8">
+                <img src="assets/images/coin-icon-3.png" alt="Parallax Element 3" class="parallax-element elem-3">
+                <img src="assets/images/coin-icon-4.png" alt="Parallax Element 4" class="parallax-element elem-4">
+            </div>
+            <div class="parallax-layer layer-3" data-speed="1.2">
+                <img src="assets/images/coin-icon-5.png" alt="Parallax Element 5" class="parallax-element elem-5">
+                <img src="assets/images/coin-icon-6.png" alt="Parallax Element 6" class="parallax-element elem-6">
+            </div>
+
+        </section>
+        <!-- Scripts -->
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/gsap.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/gsap@3.12.7/dist/ScrollTrigger.min.js"></script>
+        <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+        <script src="assets/js/parallax.js"></script>
+        <script src="assets/js/interactive.js"></script>
+        <script src="assets/js/3d-scene.js"></script>
+        <!-- Bitcoin Widget Live Data -->
+        <script>
+            document.addEventListener('DOMContentLoaded', function() {
+                // Function to format large numbers with commas and abbreviations
+                function formatNumber(num) {
+                    if (num >= 1e12) return (num / 1e12).toFixed(2) + 'T';
+                    if (num >= 1e9) return (num / 1e9).toFixed(2) + 'B';
+                    if (num >= 1e6) return (num / 1e6).toFixed(2) + 'M';
+                    if (num >= 1e3) return (num / 1e3).toFixed(2) + 'K';
+                    return num.toFixed(2);
+                }
+
+                // Function to format currency values
+                function formatCurrency(num) {
+                    return new Intl.NumberFormat('en-US', {
+                        style: 'currency',
+                        currency: 'USD',
+                        maximumFractionDigits: 2
+                    }).format(num);
+                }
+
+                // Function to set trend badge
+                function setTrendBadge(priceChange) {
+                    const trendBadge = document.getElementById('btc-trend');
+                    if (priceChange > 3) {
+                        trendBadge.textContent = 'Bullish';
+                        trendBadge.style.background = 'rgba(46, 213, 115, 0.3)';
+                        trendBadge.style.color = '#2ed573';
+                    } else if (priceChange > 0) {
+                        trendBadge.textContent = 'Positive';
+                        trendBadge.style.background = 'rgba(46, 213, 115, 0.2)';
+                        trendBadge.style.color = '#2ed573';
+                    } else if (priceChange > -3) {
+                        trendBadge.textContent = 'Neutral';
+                        trendBadge.style.background = 'rgba(255, 255, 255, 0.15)';
+                        trendBadge.style.color = '#ffffff';
+                    } else {
+                        trendBadge.textContent = 'Bearish';
+                        trendBadge.style.background = 'rgba(255, 71, 87, 0.3)';
+                        trendBadge.style.color = '#ff4757';
+                    }
+                }
+
+                // Add click handlers for buy/sell buttons
+                document.querySelector('.btn-buy').addEventListener('click', function() {
+                    alert('Buy feature coming soon! This would connect to an exchange API.');
+                });
+
+                document.querySelector('.btn-sell').addEventListener('click', function() {
+                    alert('Sell feature coming soon! This would connect to an exchange API.');
+                });
+
+                // Function to fetch BTC data from CoinGecko API
+                function fetchBitcoinData() {
+                    fetch('https://api.coingecko.com/api/v3/coins/bitcoin?localization=false&tickers=false&market_data=true&community_data=false&developer_data=false')
+                        .then(response => response.json())
+                        .then(data => {
+                            const price = data.market_data.current_price.usd;
+                            const priceChange24h = data.market_data.price_change_percentage_24h;
+                            const volume = data.market_data.total_volume.usd;
+                            const marketCap = data.market_data.market_cap.usd;
+                            const ath = data.market_data.ath.usd;
+                            const circulatingSupply = data.market_data.circulating_supply;
+
+                            // Set market rank
+                            document.getElementById('btc-rank').textContent = '#' + data.market_cap_rank;
+
+                            // Update the DOM elements with the fetched data
+                            document.getElementById('btc-price').textContent = formatCurrency(price);
+
+                            const changeElement = document.getElementById('btc-change');
+                            changeElement.textContent = priceChange24h.toFixed(2) + '%';
+
+                            // Add appropriate class based on price change direction
+                            if (priceChange24h > 0) {
+                                changeElement.className = 'price-change positive';
+                                changeElement.textContent = '+' + changeElement.textContent;
+                            } else if (priceChange24h < 0) {
+                                changeElement.className = 'price-change negative';
+                            }
+
+                            // Update trend indicator
+                            setTrendBadge(priceChange24h);
+
+                            // Update standard stats
+                            document.getElementById('btc-volume').textContent = formatNumber(volume);
+                            document.getElementById('btc-market-cap').textContent = formatNumber(marketCap);
+
+                            // Update new stats
+                            document.getElementById('btc-ath').textContent = formatCurrency(ath);
+                            document.getElementById('btc-supply').textContent = formatNumber(circulatingSupply);
+
+                            // Here we would normally update the chart
+                            // For now we just have a placeholder
+                        })
+                        .catch(error => {
+                            console.error('Error fetching Bitcoin data:', error);
+                            document.getElementById('btc-price').textContent = 'API Error';
+                        });
+                }
+
+                // Initial call to fetch data
+                fetchBitcoinData();
+
+                // Update every 1 minute (60000 ms)
+                // Note: CoinGecko's free API has rate limits, adjust as needed
+                setInterval(fetchBitcoinData, 60000);
+            });
+        </script>
+</body>
+
 </html>

@@ -7,12 +7,12 @@
     <meta name="description" content="DevFund - AI-Powered Web3 Funding Automation">
     <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
     <link rel="stylesheet" href="assets/css/style.css">
-    <link rel="stylesheet" href="assets/css/automation.css">
+    <link rel="stylesheet" href="assets/css/automation-new.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
     <title>DevFund Automation</title>
 </head>
 
-<body>
+<body class="automation-body">
     <header class="devfund-header">
         <div class="logo"><i class="fas fa-heartbeat"></i> DevFund</div>
         <nav>
@@ -23,184 +23,443 @@
         <button class="menu-toggle">☰</button>
     </header>
 
-    <main class="automation-container">
-        <section class="automation-header">
-            <h1>Automation Controls</h1>
-            <div class="automation-actions">
-                <button class="run-all-btn"><i class="fas fa-play"></i> Run All Automations</button>
-                <button class="stop-all-btn"><i class="fas fa-stop"></i> Stop All</button>
-            </div>
-        </section>
-
-        <section class="automation-overview">
-            <div class="overview-card">
-                <div class="overview-icon active">
+    <div class="automation-wrapper">
+        <!-- Main Navigation -->
+        <div class="automation-sidebar">
+            <div class="automation-status">
+                <div class="status-indicator active">
                     <i class="fas fa-robot"></i>
                 </div>
-                <div class="overview-content">
+                <div class="status-text">
                     <h3>RPA Status</h3>
-                    <p class="status-text active">Active</p>
+                    <p>Active</p>
                 </div>
             </div>
-            <div class="overview-card">
-                <div class="overview-icon">
-                    <i class="fas fa-clock"></i>
-                </div>
-                <div class="overview-content">
-                    <h3>Time Saved</h3>
-                    <p>328 hours this month</p>
-                </div>
+            <div class="sidebar-navigation">
+                <button class="nav-item active" data-view="dashboard">
+                    <i class="fas fa-tachometer-alt"></i>
+                    <span>Dashboard</span>
+                </button>
+                <button class="nav-item" data-view="workflow">
+                    <i class="fas fa-project-diagram"></i>
+                    <span>Workflows & RPA</span>
+                </button>
+                <button class="nav-item" data-view="smart-contracts">
+                    <i class="fas fa-file-contract"></i>
+                    <span>Smart Contracts</span>
+                </button>
+                <button class="nav-item" data-view="ai-agents">
+                    <i class="fas fa-brain"></i>
+                    <span>AI Agents</span>
+                </button>
+                <button class="nav-item" data-view="geo-tools">
+                    <i class="fas fa-map-marked-alt"></i>
+                    <span>Geospatial Tools</span>
+                </button>
+                <button class="nav-item" data-view="identity">
+                    <i class="fas fa-fingerprint"></i>
+                    <span>Identity & Reputation</span>
+                </button>
+                <button class="nav-item" data-view="wallet">
+                    <i class="fas fa-wallet"></i>
+                    <span>Wallet Automation</span>
+                </button>
+                <button class="nav-item" data-view="reports">
+                    <i class="fas fa-chart-pie"></i>
+                    <span>Reports & Logs</span>
+                </button>
             </div>
-            <div class="overview-card">
-                <div class="overview-icon">
-                    <i class="fas fa-tasks"></i>
-                </div>
-                <div class="overview-content">
-                    <h3>Automations</h3>
-                    <p>12 active / 15 total</p>
-                </div>
-            </div>
-        </section>
-
-        <div class="automation-grid">
-            <section class="automation-processes">
-                <h2>Active Processes</h2>
-
-                <div class="process-card">
-                    <div class="process-header">
-                        <div class="process-title">
-                            <i class="fas fa-file-signature"></i>
-                            <h3>Grant Approvals</h3>
-                        </div>
-                        <div class="toggle-switch active">
-                            <input type="checkbox" id="grant-toggle" checked>
-                            <label for="grant-toggle"></label>
-                        </div>
-                    </div>
-                    <div class="process-body">
-                        <p>Automated review and approval of grant applications based on predefined criteria</p>
-                        <div class="process-stats">
-                            <div class="stat">
-                                <span class="label">Efficiency</span>
-                                <span class="value">92%</span>
-                            </div>
-                            <div class="stat">
-                                <span class="label">Last Run</span>
-                                <span class="value">2h ago</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="process-footer">
-                        <button class="config-btn"><i class="fas fa-cog"></i> Configure</button>
-                        <button class="run-btn"><i class="fas fa-play"></i> Run Now</button>
-                    </div>
-                </div>
-
-                <div class="process-card">
-                    <div class="process-header">
-                        <div class="process-title">
-                            <i class="fas fa-shield-alt"></i>
-                            <h3>Compliance Checks</h3>
-                        </div>
-                        <div class="toggle-switch active">
-                            <input type="checkbox" id="compliance-toggle" checked>
-                            <label for="compliance-toggle"></label>
-                        </div>
-                    </div>
-                    <div class="process-body">
-                        <p>Automated verification of regulatory compliance for all funded projects</p>
-                        <div class="process-stats">
-                            <div class="stat">
-                                <span class="label">Efficiency</span>
-                                <span class="value">96%</span>
-                            </div>
-                            <div class="stat">
-                                <span class="label">Last Run</span>
-                                <span class="value">6h ago</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="process-footer">
-                        <button class="config-btn"><i class="fas fa-cog"></i> Configure</button>
-                        <button class="run-btn"><i class="fas fa-play"></i> Run Now</button>
-                    </div>
-                </div>
-
-                <div class="process-card">
-                    <div class="process-header">
-                        <div class="process-title">
-                            <i class="fas fa-coins"></i>
-                            <h3>Funds Disbursement</h3>
-                        </div>
-                        <div class="toggle-switch">
-                            <input type="checkbox" id="funds-toggle">
-                            <label for="funds-toggle"></label>
-                        </div>
-                    </div>
-                    <div class="process-body">
-                        <p>Automated transfer of funds to approved projects based on milestone completion</p>
-                        <div class="process-stats">
-                            <div class="stat">
-                                <span class="label">Efficiency</span>
-                                <span class="value">89%</span>
-                            </div>
-                            <div class="stat">
-                                <span class="label">Last Run</span>
-                                <span class="value">2d ago</span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="process-footer">
-                        <button class="config-btn"><i class="fas fa-cog"></i> Configure</button>
-                        <button class="run-btn"><i class="fas fa-play"></i> Run Now</button>
-                    </div>
-                </div>
-            </section>
-
-            <section class="automation-logs">
-                <h2>Execution Logs</h2>
-                <div class="log-container">
-                    <div class="log-entry success">
-                        <div class="log-time">10:23 AM</div>
-                        <div class="log-content">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Grant Approval Process completed successfully for 3 applications</span>
-                        </div>
-                    </div>
-                    <div class="log-entry success">
-                        <div class="log-time">09:15 AM</div>
-                        <div class="log-content">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Compliance Check completed for "AI Research Lab" project</span>
-                        </div>
-                    </div>
-                    <div class="log-entry warning">
-                        <div class="log-time">Yesterday</div>
-                        <div class="log-content">
-                            <i class="fas fa-exclamation-triangle"></i>
-                            <span>Manual review needed for "Water Purification" project</span>
-                        </div>
-                    </div>
-                    <div class="log-entry error">
-                        <div class="log-time">Yesterday</div>
-                        <div class="log-content">
-                            <i class="fas fa-times-circle"></i>
-                            <span>Funds Disbursement failed for "Tech Literacy" project</span>
-                        </div>
-                    </div>
-                    <div class="log-entry success">
-                        <div class="log-time">2 days ago</div>
-                        <div class="log-content">
-                            <i class="fas fa-check-circle"></i>
-                            <span>Compliance Checks completed for 5 projects</span>
-                        </div>
-                    </div>
-                </div>
-            </section>
         </div>
-    </main>
 
-    <script src="assets/js/automation.js"></script>
+        <!-- Content Area -->
+        <main class="automation-content">
+            <!-- Dashboard View -->
+            <div class="content-view active" id="dashboard-view">
+                <div class="dashboard-header">
+                    <div class="dashboard-title">
+                        <h1>Automation Dashboard</h1>
+                        <p class="last-update">Last updated: <span class="update-time">April 22, 2025 - 14:32</span></p>
+                    </div>
+                    <div class="dashboard-actions">
+                        <button class="action-btn run-all"><i class="fas fa-play"></i> Run All</button>
+                        <button class="action-btn refresh"><i class="fas fa-sync-alt"></i> Refresh</button>
+                        <button class="action-btn settings"><i class="fas fa-cog"></i></button>
+                    </div>
+                </div>
+
+                <div class="dashboard-grid">
+                    <!-- Key Metrics -->
+                    <div class="dashboard-card metrics">
+                        <div class="card-header">
+                            <h2>Key Metrics</h2>
+                            <button class="expand-btn"><i class="fas fa-expand-alt"></i></button>
+                        </div>
+                        <div class="card-content">
+                            <div class="metrics-grid">
+                                <div class="metric-item">
+                                    <div class="metric-icon green">
+                                        <i class="fas fa-tasks"></i>
+                                    </div>
+                                    <div class="metric-data">
+                                        <h3>Active Automations</h3>
+                                        <p>12 / 15</p>
+                                    </div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-icon blue">
+                                        <i class="fas fa-clock"></i>
+                                    </div>
+                                    <div class="metric-data">
+                                        <h3>Time Saved</h3>
+                                        <p>328 hours this month</p>
+                                    </div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-icon purple">
+                                        <i class="fas fa-file-signature"></i>
+                                    </div>
+                                    <div class="metric-data">
+                                        <h3>KYC Processed</h3>
+                                        <p>312 this month</p>
+                                    </div>
+                                </div>
+                                <div class="metric-item">
+                                    <div class="metric-icon orange">
+                                        <i class="fas fa-coins"></i>
+                                    </div>
+                                    <div class="metric-data">
+                                        <h3>Funds Disbursed</h3>
+                                        <p>$123,450 this month</p>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Active Processes -->
+                    <div class="dashboard-card processes">
+                        <div class="card-header">
+                            <h2>Active Processes</h2>
+                            <div class="card-actions">
+                                <button class="card-action-btn"><i class="fas fa-plus"></i></button>
+                                <button class="card-action-btn"><i class="fas fa-filter"></i></button>
+                                <button class="expand-btn"><i class="fas fa-expand-alt"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <table class="process-table">
+                                <thead>
+                                    <tr>
+                                        <th>Process</th>
+                                        <th>Status</th>
+                                        <th>Efficiency</th>
+                                        <th>Last Run</th>
+                                        <th>Actions</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>
+                                            <div class="process-name">
+                                                <i class="fas fa-file-signature process-icon"></i>
+                                                <span>Grant Approvals</span>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-badge active">Active</span></td>
+                                        <td>92%</td>
+                                        <td>2h ago</td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="table-btn run"><i class="fas fa-play"></i></button>
+                                                <button class="table-btn config"><i class="fas fa-cog"></i></button>
+                                                <button class="table-btn more"><i class="fas fa-ellipsis-v"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="process-name">
+                                                <i class="fas fa-shield-alt process-icon"></i>
+                                                <span>Compliance Checks</span>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-badge active">Active</span></td>
+                                        <td>96%</td>
+                                        <td>6h ago</td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="table-btn run"><i class="fas fa-play"></i></button>
+                                                <button class="table-btn config"><i class="fas fa-cog"></i></button>
+                                                <button class="table-btn more"><i class="fas fa-ellipsis-v"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>
+                                            <div class="process-name">
+                                                <i class="fas fa-coins process-icon"></i>
+                                                <span>Funds Disbursement</span>
+                                            </div>
+                                        </td>
+                                        <td><span class="status-badge inactive">Inactive</span></td>
+                                        <td>89%</td>
+                                        <td>2d ago</td>
+                                        <td>
+                                            <div class="action-buttons">
+                                                <button class="table-btn run"><i class="fas fa-play"></i></button>
+                                                <button class="table-btn config"><i class="fas fa-cog"></i></button>
+                                                <button class="table-btn more"><i class="fas fa-ellipsis-v"></i></button>
+                                            </div>
+                                        </td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+
+                    <!-- Recent Logs -->
+                    <div class="dashboard-card logs">
+                        <div class="card-header">
+                            <h2>Recent Activity</h2>
+                            <div class="card-actions">
+                                <button class="card-action-btn"><i class="fas fa-filter"></i></button>
+                                <button class="expand-btn"><i class="fas fa-expand-alt"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="log-list">
+                                <div class="log-item success">
+                                    <div class="log-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="log-details">
+                                        <p>Grant Approval Process completed successfully for 3 applications</p>
+                                        <span class="log-time">10:23 AM</span>
+                                    </div>
+                                </div>
+                                <div class="log-item success">
+                                    <div class="log-icon">
+                                        <i class="fas fa-check-circle"></i>
+                                    </div>
+                                    <div class="log-details">
+                                        <p>Compliance Check completed for "AI Research Lab" project</p>
+                                        <span class="log-time">09:15 AM</span>
+                                    </div>
+                                </div>
+                                <div class="log-item warning">
+                                    <div class="log-icon">
+                                        <i class="fas fa-exclamation-triangle"></i>
+                                    </div>
+                                    <div class="log-details">
+                                        <p>Manual review needed for "Water Purification" project</p>
+                                        <span class="log-time">Yesterday</span>
+                                    </div>
+                                </div>
+                                <div class="log-item error">
+                                    <div class="log-icon">
+                                        <i class="fas fa-times-circle"></i>
+                                    </div>
+                                    <div class="log-details">
+                                        <p>Funds Disbursement failed for "Tech Literacy" project</p>
+                                        <span class="log-time">Yesterday</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Quick Actions -->
+                    <div class="dashboard-card actions">
+                        <div class="card-header">
+                            <h2>Quick Actions</h2>
+                            <div class="card-actions">
+                                <button class="card-action-btn"><i class="fas fa-plus"></i></button>
+                                <button class="expand-btn"><i class="fas fa-expand-alt"></i></button>
+                            </div>
+                        </div>
+                        <div class="card-content">
+                            <div class="quick-actions">
+                                <button class="quick-action-btn">
+                                    <i class="fas fa-file-import"></i>
+                                    <span>Import Proposals</span>
+                                </button>
+                                <button class="quick-action-btn">
+                                    <i class="fas fa-user-check"></i>
+                                    <span>Batch KYC</span>
+                                </button>
+                                <button class="quick-action-btn">
+                                    <i class="fas fa-money-check"></i>
+                                    <span>Release Funds</span>
+                                </button>
+                                <button class="quick-action-btn">
+                                    <i class="fas fa-chart-bar"></i>
+                                    <span>Generate Report</span>
+                                </button>
+                                <button class="quick-action-btn">
+                                    <i class="fas fa-network-wired"></i>
+                                    <span>Oracle Health</span>
+                                </button>
+                                <button class="quick-action-btn">
+                                    <i class="fas fa-eye"></i>
+                                    <span>View Map</span>
+                                </button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workflow & RPA View -->
+            <div class="content-view" id="workflow-view">
+                <div class="view-header">
+                    <h1>Workflow & RPA Automation</h1>
+                    <div class="view-actions">
+                        <button class="action-btn"><i class="fas fa-plus"></i> New Workflow</button>
+                        <button class="action-btn"><i class="fas fa-cog"></i></button>
+                    </div>
+                </div>
+
+                <div class="automation-features">
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <div class="feature-icon">
+                                <i class="fas fa-id-card"></i>
+                            </div>
+                            <div class="feature-title">
+                                <h3>Automated KYC & Compliance</h3>
+                                <span class="status-badge active">Active</span>
+                            </div>
+                        </div>
+                        <div class="feature-body">
+                            <p>RPA bots ingest application data, extract PDFs, verify identity documents with 98% accuracy</p>
+                            <div class="feature-metrics">
+                                <div class="metric">
+                                    <span class="label">Processed</span>
+                                    <span class="value">312 this month</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="label">Accuracy</span>
+                                    <span class="value">98%</span>
+                                </div>
+                            </div>
+                            <div class="feature-actions">
+                                <button class="feature-action-btn primary"><i class="fas fa-play"></i> Run Now</button>
+                                <button class="feature-action-btn secondary"><i class="fas fa-sliders-h"></i> Configure</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <div class="feature-icon">
+                                <i class="fas fa-file-alt"></i>
+                            </div>
+                            <div class="feature-title">
+                                <h3>Document Validation Pipeline</h3>
+                                <span class="status-badge active">Active</span>
+                            </div>
+                        </div>
+                        <div class="feature-body">
+                            <p>OCR-powered bots extract and verify proposal data against smart contract terms</p>
+                            <div class="feature-metrics">
+                                <div class="metric">
+                                    <span class="label">Validated</span>
+                                    <span class="value">98 this month</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="label">Accuracy</span>
+                                    <span class="value">94%</span>
+                                </div>
+                            </div>
+                            <div class="feature-actions">
+                                <button class="feature-action-btn primary"><i class="fas fa-play"></i> Run Now</button>
+                                <button class="feature-action-btn secondary"><i class="fas fa-sliders-h"></i> Configure</button>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="feature-card">
+                        <div class="feature-header">
+                            <div class="feature-icon">
+                                <i class="fas fa-tasks"></i>
+                            </div>
+                            <div class="feature-title">
+                                <h3>Milestone Verification</h3>
+                                <span class="status-badge active">Active</span>
+                            </div>
+                        </div>
+                        <div class="feature-body">
+                            <p>RPA workflows poll project submissions and trigger contract calls once conditions are met</p>
+                            <div class="feature-metrics">
+                                <div class="metric">
+                                    <span class="label">Verified</span>
+                                    <span class="value">43 milestones</span>
+                                </div>
+                                <div class="metric">
+                                    <span class="label">Success Rate</span>
+                                    <span class="value">96%</span>
+                                </div>
+                            </div>
+                            <div class="feature-actions">
+                                <button class="feature-action-btn primary"><i class="fas fa-play"></i> Run Now</button>
+                                <button class="feature-action-btn secondary"><i class="fas fa-sliders-h"></i> Configure</button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Other views would be defined here -->
+            <div class="content-view" id="smart-contracts-view">
+                <div class="view-header">
+                    <h1>Smart Contract Triggers</h1>
+                    <div class="view-actions">
+                        <button class="action-btn"><i class="fas fa-plus"></i> New Contract</button>
+                        <button class="action-btn"><i class="fas fa-cog"></i></button>
+                    </div>
+                </div>
+                <!-- Smart contract content would go here -->
+            </div>
+
+            <div class="content-view" id="ai-agents-view">
+                <!-- AI Agents content -->
+            </div>
+
+            <div class="content-view" id="geo-tools-view">
+                <!-- Geospatial tools content -->
+            </div>
+
+            <div class="content-view" id="identity-view">
+                <!-- Identity content -->
+            </div>
+
+            <div class="content-view" id="wallet-view">
+                <!-- Wallet automation content -->
+            </div>
+
+            <div class="content-view" id="reports-view">
+                <!-- Reports content -->
+            </div>
+        </main>
+    </div>
+
+    <!-- Modal Templates -->
+    <div class="modal-container" id="config-modal">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h2>Configure Automation</h2>
+                <button class="modal-close"><i class="fas fa-times"></i></button>
+            </div>
+            <div class="modal-body">
+                <!-- Modal content will be dynamically inserted -->
+            </div>
+            <div class="modal-footer">
+                <button class="btn-cancel">Cancel</button>
+                <button class="btn-save">Save Changes</button>
+            </div>
+        </div>
+    </div>
+    <script src="assets/js/automation-new.js"></script>
 </body>
 
 </html>

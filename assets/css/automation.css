@@ -1,6 +1,7 @@
 :root {
     --bg-dark: #12151e;
     --panel-bg: #1a1e2c;
+    --panel-bg-alt: #1e2436;
     --text-primary: #ffffff;
     --text-secondary: #a0a8c0;
     --accent-blue: #00bfff;
@@ -8,26 +9,39 @@
     --accent-green: #20b2aa;
     --accent-red: #ff4757;
     --accent-orange: #ffa502;
+    --accent-yellow: #ffc107;
     --spacing-sm: 8px;
     --spacing-md: 16px;
     --spacing-lg: 24px;
     --panel-radius: 8px;
     --panel-padding: 20px;
+    --header-height: 60px;
+    --sidebar-width: 240px;
+    --card-shadow: 0 4px 20px rgba(0, 0, 0, 0.25);
+    --transition-speed: 0.2s;
+}
+
+
+/* Base Layout */
+
+html,
+body {
+    height: 100%;
+    margin: 0;
+    padding: 0;
+    overflow: hidden;
 }
 
 body {
     background-color: var(--bg-dark);
     color: var(--text-primary);
     font-family: 'Inter', 'Segoe UI', sans-serif;
-    margin: 0;
-    padding: 0;
     line-height: 1.5;
 }
 
-.automation-container {
-    max-width: 1400px;
-    margin: 0 auto;
-    padding: var(--spacing-lg);
+.automation-body {
+    display: flex;
+    flex-direction: column;
 }
 
 
@@ -147,6 +161,7 @@ body {
     display: grid;
     grid-template-columns: 2fr 1fr;
     gap: var(--spacing-lg);
+    margin-bottom: var(--spacing-lg);
 }
 
 

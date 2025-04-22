@@ -1,0 +1,201 @@
+/* Advanced Automation Features Styling */
+
+.advanced-features {
+    margin-top: var(--spacing-lg);
+}
+
+.advanced-features h2 {
+    font-size: 1.4rem;
+    font-weight: 500;
+    margin-bottom: var(--spacing-lg);
+}
+
+
+/* Category Navigation */
+
+.feature-categories {
+    background-color: var(--panel-bg);
+    border-radius: var(--panel-radius);
+    overflow: hidden;
+}
+
+.category-navigation {
+    display: flex;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    padding: var(--spacing-md) var(--panel-padding);
+    border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    gap: var(--spacing-md);
+    scrollbar-width: thin;
+    scrollbar-color: var(--accent-purple) rgba(255, 255, 255, 0.05);
+}
+
+.category-navigation::-webkit-scrollbar {
+    height: 5px;
+}
+
+.category-navigation::-webkit-scrollbar-track {
+    background: rgba(255, 255, 255, 0.05);
+    border-radius: 5px;
+}
+
+.category-navigation::-webkit-scrollbar-thumb {
+    background-color: var(--accent-purple);
+    border-radius: 5px;
+}
+
+.category-btn {
+    background: transparent;
+    color: var(--text-secondary);
+    border: none;
+    padding: 8px 16px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    border-radius: 20px;
+    white-space: nowrap;
+    transition: all 0.2s ease;
+}
+
+.category-btn:hover {
+    color: var(--text-primary);
+    background-color: rgba(138, 43, 226, 0.1);
+}
+
+.category-btn.active {
+    background-color: rgba(138, 43, 226, 0.2);
+    color: var(--accent-purple);
+    font-weight: 500;
+}
+
+
+/* Feature Content */
+
+.feature-content-container {
+    padding: var(--panel-padding);
+}
+
+.feature-content {
+    display: none;
+}
+
+.feature-content.active {
+    display: block;
+}
+
+.feature-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(350px, 1fr));
+    gap: var(--spacing-md);
+}
+
+
+/* Feature Card */
+
+.feature-card {
+    background-color: rgba(26, 30, 44, 0.7);
+    border-radius: var(--panel-radius);
+    padding: var(--panel-padding);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    display: flex;
+    gap: var(--spacing-md);
+    transition: all 0.3s ease;
+}
+
+.feature-card:hover {
+    border-color: rgba(138, 43, 226, 0.3);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+    transform: translateY(-2px);
+}
+
+.feature-icon {
+    height: 50px;
+    width: 50px;
+    min-width: 50px;
+    border-radius: 12px;
+    background-color: rgba(138, 43, 226, 0.1);
+    color: var(--accent-purple);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 1.3rem;
+}
+
+.feature-details {
+    flex: 1;
+}
+
+.feature-details h3 {
+    margin: 0 0 var(--spacing-sm) 0;
+    font-size: 1rem;
+    font-weight: 500;
+    color: var(--text-primary);
+}
+
+.feature-details p {
+    margin: 0 0 var(--spacing-md) 0;
+    font-size: 0.9rem;
+    color: var(--text-secondary);
+    line-height: 1.5;
+}
+
+.feature-stats {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: var(--spacing-md);
+    font-size: 0.8rem;
+}
+
+.feature-stats span:first-child {
+    color: var(--accent-green);
+    font-weight: 500;
+}
+
+.feature-stats span:last-child {
+    color: var(--accent-blue);
+}
+
+.configure-feature-btn,
+.feature-btn {
+    background-color: rgba(138, 43, 226, 0.1);
+    color: var(--accent-purple);
+    border: none;
+    padding: 8px 12px;
+    border-radius: 4px;
+    font-size: 0.8rem;
+    cursor: pointer;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+    width: 100%;
+    justify-content: center;
+}
+
+.configure-feature-btn:hover,
+.feature-btn:hover {
+    background-color: rgba(138, 43, 226, 0.2);
+}
+
+.view-btn {
+    background-color: rgba(0, 191, 255, 0.1);
+    color: var(--accent-blue);
+}
+
+.view-btn:hover {
+    background-color: rgba(0, 191, 255, 0.2);
+}
+
+
+/* Responsive Design */
+
+@media (max-width: 992px) {
+    .feature-grid {
+        grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+    }
+}
+
+@media (max-width: 768px) {
+    .feature-grid {
+        grid-template-columns: 1fr;
+    }
+}
