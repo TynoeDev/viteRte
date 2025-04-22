@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DevFund - AI-Powered Web3 Funding Automation">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/automation.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>DevFund Automation</title>
+</head>
+
+<body>
+    <header class="devfund-header">
+        <div class="logo"><i class="fas fa-heartbeat"></i> DevFund</div>
+        <nav>
+            <a href="wallet-dashboard.html">Dashboard</a>
+            <a href="projects.html">Projects</a>
+            <a href="automation.html" class="active">Automation</a>
+        </nav>
+        <button class="menu-toggle">☰</button>
+    </header>
+
+    <main class="automation-container">
+        <section class="automation-header">
+            <h1>Automation Controls</h1>
+            <div class="automation-actions">
+                <button class="run-all-btn"><i class="fas fa-play"></i> Run All Automations</button>
+                <button class="stop-all-btn"><i class="fas fa-stop"></i> Stop All</button>
+            </div>
+        </section>
+
+        <section class="automation-overview">
+            <div class="overview-card">
+                <div class="overview-icon active">
+                    <i class="fas fa-robot"></i>
+                </div>
+                <div class="overview-content">
+                    <h3>RPA Status</h3>
+                    <p class="status-text active">Active</p>
+                </div>
+            </div>
+            <div class="overview-card">
+                <div class="overview-icon">
+                    <i class="fas fa-clock"></i>
+                </div>
+                <div class="overview-content">
+                    <h3>Time Saved</h3>
+                    <p>328 hours this month</p>
+                </div>
+            </div>
+            <div class="overview-card">
+                <div class="overview-icon">
+                    <i class="fas fa-tasks"></i>
+                </div>
+                <div class="overview-content">
+                    <h3>Automations</h3>
+                    <p>12 active / 15 total</p>
+                </div>
+            </div>
+        </section>
+
+        <div class="automation-grid">
+            <section class="automation-processes">
+                <h2>Active Processes</h2>
+
+                <div class="process-card">
+                    <div class="process-header">
+                        <div class="process-title">
+                            <i class="fas fa-file-signature"></i>
+                            <h3>Grant Approvals</h3>
+                        </div>
+                        <div class="toggle-switch active">
+                            <input type="checkbox" id="grant-toggle" checked>
+                            <label for="grant-toggle"></label>
+                        </div>
+                    </div>
+                    <div class="process-body">
+                        <p>Automated review and approval of grant applications based on predefined criteria</p>
+                        <div class="process-stats">
+                            <div class="stat">
+                                <span class="label">Efficiency</span>
+                                <span class="value">92%</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Last Run</span>
+                                <span class="value">2h ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="process-footer">
+                        <button class="config-btn"><i class="fas fa-cog"></i> Configure</button>
+                        <button class="run-btn"><i class="fas fa-play"></i> Run Now</button>
+                    </div>
+                </div>
+
+                <div class="process-card">
+                    <div class="process-header">
+                        <div class="process-title">
+                            <i class="fas fa-shield-alt"></i>
+                            <h3>Compliance Checks</h3>
+                        </div>
+                        <div class="toggle-switch active">
+                            <input type="checkbox" id="compliance-toggle" checked>
+                            <label for="compliance-toggle"></label>
+                        </div>
+                    </div>
+                    <div class="process-body">
+                        <p>Automated verification of regulatory compliance for all funded projects</p>
+                        <div class="process-stats">
+                            <div class="stat">
+                                <span class="label">Efficiency</span>
+                                <span class="value">96%</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Last Run</span>
+                                <span class="value">6h ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="process-footer">
+                        <button class="config-btn"><i class="fas fa-cog"></i> Configure</button>
+                        <button class="run-btn"><i class="fas fa-play"></i> Run Now</button>
+                    </div>
+                </div>
+
+                <div class="process-card">
+                    <div class="process-header">
+                        <div class="process-title">
+                            <i class="fas fa-coins"></i>
+                            <h3>Funds Disbursement</h3>
+                        </div>
+                        <div class="toggle-switch">
+                            <input type="checkbox" id="funds-toggle">
+                            <label for="funds-toggle"></label>
+                        </div>
+                    </div>
+                    <div class="process-body">
+                        <p>Automated transfer of funds to approved projects based on milestone completion</p>
+                        <div class="process-stats">
+                            <div class="stat">
+                                <span class="label">Efficiency</span>
+                                <span class="value">89%</span>
+                            </div>
+                            <div class="stat">
+                                <span class="label">Last Run</span>
+                                <span class="value">2d ago</span>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="process-footer">
+                        <button class="config-btn"><i class="fas fa-cog"></i> Configure</button>
+                        <button class="run-btn"><i class="fas fa-play"></i> Run Now</button>
+                    </div>
+                </div>
+            </section>
+
+            <section class="automation-logs">
+                <h2>Execution Logs</h2>
+                <div class="log-container">
+                    <div class="log-entry success">
+                        <div class="log-time">10:23 AM</div>
+                        <div class="log-content">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Grant Approval Process completed successfully for 3 applications</span>
+                        </div>
+                    </div>
+                    <div class="log-entry success">
+                        <div class="log-time">09:15 AM</div>
+                        <div class="log-content">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Compliance Check completed for "AI Research Lab" project</span>
+                        </div>
+                    </div>
+                    <div class="log-entry warning">
+                        <div class="log-time">Yesterday</div>
+                        <div class="log-content">
+                            <i class="fas fa-exclamation-triangle"></i>
+                            <span>Manual review needed for "Water Purification" project</span>
+                        </div>
+                    </div>
+                    <div class="log-entry error">
+                        <div class="log-time">Yesterday</div>
+                        <div class="log-content">
+                            <i class="fas fa-times-circle"></i>
+                            <span>Funds Disbursement failed for "Tech Literacy" project</span>
+                        </div>
+                    </div>
+                    <div class="log-entry success">
+                        <div class="log-time">2 days ago</div>
+                        <div class="log-content">
+                            <i class="fas fa-check-circle"></i>
+                            <span>Compliance Checks completed for 5 projects</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <script src="assets/js/automation.js"></script>
+</body>
+
+</html>

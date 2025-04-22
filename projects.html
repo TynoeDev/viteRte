@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DevFund - AI-Powered Web3 Funding Projects">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/projects.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>DevFund Projects</title>
+</head>
+
+<body>
+    <header class="devfund-header">
+        <div class="logo"><i class="fas fa-heartbeat"></i> DevFund</div>
+        <nav>
+            <a href="wallet-dashboard.html">Dashboard</a>
+            <a href="projects.html" class="active">Projects</a>
+            <a href="automation.html">Automation</a>
+        </nav>
+        <button class="menu-toggle">☰</button>
+    </header>
+
+    <main class="projects-container">
+        <section class="projects-header">
+            <h1>Projects Overview</h1>
+            <div class="projects-actions">
+                <div class="search-box">
+                    <i class="fas fa-search"></i>
+                    <input type="text" placeholder="Search projects...">
+                </div>
+                <div class="filter-options">
+                    <select>
+                        <option value="all">All Categories</option>
+                        <option value="tech">Technology</option>
+                        <option value="science">Science</option>
+                        <option value="development">Development</option>
+                    </select>
+                    <select>
+                        <option value="all">All Status</option>
+                        <option value="submitted">Submitted</option>
+                        <option value="funded">Funded</option>
+                        <option value="in-progress">In Progress</option>
+                        <option value="completed">Completed</option>
+                    </select>
+                </div>
+                <button class="new-project-btn"><i class="fas fa-plus"></i> New Project</button>
+            </div>
+        </section>
+
+        <section class="projects-stats">
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-project-diagram"></i>
+                </div>
+                <div class="stat-content">
+                    <p>Total Projects</p>
+                    <div class="stat-number">24</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-money-bill-wave"></i>
+                </div>
+                <div class="stat-content">
+                    <p>Total Funding</p>
+                    <div class="stat-number">$2.4M</div>
+                </div>
+            </div>
+            <div class="stat-card">
+                <div class="stat-icon">
+                    <i class="fas fa-check-circle"></i>
+                </div>
+                <div class="stat-content">
+                    <p>Completion Rate</p>
+                    <div class="stat-number">78%</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="projects-list">
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Satellite Connectivity</h3>
+                    <span class="status-tag submitted">Submitted</span>
+                </div>
+                <div class="project-body">
+                    <p>Bringing internet access to remote regions via low-orbit satellite technology</p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <i class="fas fa-coins"></i>
+                            <span>$320,000</span>
+                        </div>
+                        <div class="metric">
+                            <i class="fas fa-calendar"></i>
+                            <span>8 months</span>
+                        </div>
+                    </div>
+                    <div class="project-progress">
+                        <div class="progress-label">
+                            <span>Progress</span>
+                            <span>30%</span>
+                        </div>
+                        <div class="timeline-bar">
+                            <div class="progress" style="width: 30%; background-color: #8a2be2;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <button class="project-action-btn">View Details</button>
+                    <div class="project-contributors">
+                        <span>Team: </span>
+                        <div class="contributor-avatars">
+                            <div class="avatar">JD</div>
+                            <div class="avatar">MR</div>
+                            <div class="avatar">KL</div>
+                            <div class="avatar-more">+2</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Solar Energy Initiative</h3>
+                    <span class="status-tag funded">Funded</span>
+                </div>
+                <div class="project-body">
+                    <p>Implementing solar panels and training local technicians in rural communities</p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <i class="fas fa-coins"></i>
+                            <span>$180,000</span>
+                        </div>
+                        <div class="metric">
+                            <i class="fas fa-calendar"></i>
+                            <span>6 months</span>
+                        </div>
+                    </div>
+                    <div class="project-progress">
+                        <div class="progress-label">
+                            <span>Progress</span>
+                            <span>60%</span>
+                        </div>
+                        <div class="timeline-bar">
+                            <div class="progress" style="width: 60%; background-color: #00bfff;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <button class="project-action-btn">View Details</button>
+                    <div class="project-contributors">
+                        <span>Team: </span>
+                        <div class="contributor-avatars">
+                            <div class="avatar">AL</div>
+                            <div class="avatar">TS</div>
+                            <div class="avatar-more">+3</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>AI Research Lab</h3>
+                    <span class="status-tag funded">Funded</span>
+                </div>
+                <div class="project-body">
+                    <p>Establishing AI research facilities focused on healthcare applications</p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <i class="fas fa-coins"></i>
+                            <span>$450,000</span>
+                        </div>
+                        <div class="metric">
+                            <i class="fas fa-calendar"></i>
+                            <span>12 months</span>
+                        </div>
+                    </div>
+                    <div class="project-progress">
+                        <div class="progress-label">
+                            <span>Progress</span>
+                            <span>80%</span>
+                        </div>
+                        <div class="timeline-bar">
+                            <div class="progress" style="width: 80%; background-color: #00bfff;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <button class="project-action-btn">View Details</button>
+                    <div class="project-contributors">
+                        <span>Team: </span>
+                        <div class="contributor-avatars">
+                            <div class="avatar">DR</div>
+                            <div class="avatar">JP</div>
+                            <div class="avatar">SL</div>
+                            <div class="avatar-more">+4</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="project-card">
+                <div class="project-header">
+                    <h3>Water Purification</h3>
+                    <span class="status-tag in-progress">In Progress</span>
+                </div>
+                <div class="project-body">
+                    <p>Deploying water filtration systems in communities with limited access to clean water</p>
+                    <div class="project-metrics">
+                        <div class="metric">
+                            <i class="fas fa-coins"></i>
+                            <span>$120,000</span>
+                        </div>
+                        <div class="metric">
+                            <i class="fas fa-calendar"></i>
+                            <span>4 months</span>
+                        </div>
+                    </div>
+                    <div class="project-progress">
+                        <div class="progress-label">
+                            <span>Progress</span>
+                            <span>50%</span>
+                        </div>
+                        <div class="timeline-bar">
+                            <div class="progress" style="width: 50%; background-color: #20b2aa;"></div>
+                        </div>
+                    </div>
+                </div>
+                <div class="project-footer">
+                    <button class="project-action-btn">View Details</button>
+                    <div class="project-contributors">
+                        <span>Team: </span>
+                        <div class="contributor-avatars">
+                            <div class="avatar">CM</div>
+                            <div class="avatar">AJ</div>
+                            <div class="avatar-more">+1</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <script src="assets/js/projects.js"></script>
+</body>
+
+</html>

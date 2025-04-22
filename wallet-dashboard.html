@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="DevFund - AI-Powered Web3 Funding Dashboard">
+    <link rel="shortcut icon" href="assets/images/favicon.ico" type="image/x-icon">
+    <link rel="stylesheet" href="assets/css/style.css">
+    <link rel="stylesheet" href="assets/css/wallet-dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.4/css/all.min.css">
+    <title>DevFund Dashboard</title>
+</head>
+
+<body>
+    <header class="devfund-header">
+        <div class="logo"><i class="fas fa-heartbeat"></i> DevFund</div>
+        <nav>
+            <a href="wallet-dashboard.html" class="active">Dashboard</a>
+            <a href="projects.html">Projects</a>
+            <a href="automation.html">Automation</a>
+        </nav>
+        <button class="menu-toggle">☰</button>
+    </header>
+
+    <main class="dashboard-grid">
+        <!-- AI-Driven Insights Panel -->
+        <section class="dashboard-panel ai-insights">
+            <h2>AI-Driven Insights</h2>
+
+            <div class="insight-card">
+                <div class="insight-icon">
+                    <i class="fas fa-brain"></i>
+                </div>
+                <div class="insight-content">
+                    <p>Project Success Prediction</p>
+                    <div class="metric">75%</div>
+                </div>
+            </div>
+
+            <div class="insight-card">
+                <div class="insight-icon">
+                    <i class="fas fa-chart-line"></i>
+                </div>
+                <div class="insight-content">
+                    <p>Funding Impact Score</p>
+                    <div class="metric">64</div>
+                </div>
+            </div>
+
+            <a href="#" class="details-link">View Details</a>
+        </section>
+
+        <!-- Blockchain Funding Tracker Panel -->
+        <section class="dashboard-panel funding-tracker">
+            <h2>Funding Tracker</h2>
+
+            <div class="funding-flow">
+                <div class="flow-node funder">
+                    <div class="node-icon">
+                        <i class="fas fa-cube"></i>
+                    </div>
+                    <div class="node-label">Funder</div>
+                </div>
+
+                <div class="flow-connector"></div>
+
+                <div class="flow-node smart-contract">
+                    <div class="node-label">Smart Contract</div>
+                    <div class="node-amount">$150,000 LOCKED</div>
+                </div>
+
+                <div class="flow-branches">
+                    <div class="flow-connector vertical"></div>
+                    <div class="flow-connector horizontal"></div>
+                    <div class="flow-connector horizontal"></div>
+                    <div class="flow-connector horizontal"></div>
+                </div>
+
+                <div class="flow-endpoints">
+                    <div class="flow-node project">
+                        <div class="node-label">Tech Project</div>
+                        <div class="node-amount">$45,000</div>
+                    </div>
+
+                    <div class="flow-node project">
+                        <div class="node-label">Science Project</div>
+                        <div class="node-amount">$45,000</div>
+                    </div>
+
+                    <div class="flow-node project">
+                        <div class="node-label">Development</div>
+                        <div class="node-amount">$30,000</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- RPA Automation Console Panel -->
+        <section class="dashboard-panel rpa-automation">
+            <h2>RPA Automation</h2>
+
+            <div class="automation-item">
+                <div class="automation-icon">
+                    <i class="fas fa-file-signature"></i>
+                </div>
+                <span>Grant Approvals</span>
+            </div>
+
+            <div class="automation-item">
+                <div class="automation-icon">
+                    <i class="fas fa-shield-alt"></i>
+                </div>
+                <span>Compliance Checks</span>
+            </div>
+
+            <div class="automation-item">
+                <div class="automation-icon">
+                    <i class="fas fa-coins"></i>
+                </div>
+                <span>Funds Disbursement</span>
+            </div>
+
+            <a href="#" class="details-link">Manage <i class="fas fa-angle-right"></i></a>
+        </section>
+
+        <!-- Project Pipeline Visualization Panel -->
+        <section class="dashboard-panel project-pipeline">
+            <h2>Projects in Pipeline</h2>
+
+            <div class="pipeline-table-container">
+                <table class="pipeline-table">
+                    <thead>
+                        <tr>
+                            <th>Project</th>
+                            <th>Status</th>
+                            <th>Timeline (Feb-May)</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>Satellite Connectivity</td>
+                            <td><span class="status-tag submitted">Submitted</span></td>
+                            <td>
+                                <div class="timeline-bar">
+                                    <div class="progress" style="width: 30%; background-color: #8a2be2;"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Solar Energy Initiative</td>
+                            <td><span class="status-tag funded">Funded</span></td>
+                            <td>
+                                <div class="timeline-bar">
+                                    <div class="progress" style="width: 60%; background-color: #00bfff;"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>AI Research Lab</td>
+                            <td><span class="status-tag funded">Funded</span></td>
+                            <td>
+                                <div class="timeline-bar">
+                                    <div class="progress" style="width: 80%; background-color: #00bfff;"></div>
+                                </div>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Water Purification</td>
+                            <td><span class="status-tag in-progress">In Progress</span></td>
+                            <td>
+                                <div class="timeline-bar">
+                                    <div class="progress" style="width: 50%; background-color: #20b2aa;"></div>
+                                </div>
+                            </td>
+                        </tr>
+                    </tbody>
+                </table>
+            </div>
+        </section>
+
+        <!-- Extra Info Panel -->
+        <section class="dashboard-panel extra-info">
+            <h2>Funding Tech & Science in Developing Regions</h2>
+            <p>Supporting innovation and sustainable development through transparent blockchain-based funding.</p>
+        </section>
+    </main>
+
+    <script src="assets/js/wallet-dashboard.js"></script>
+</body>
+
+</html>
