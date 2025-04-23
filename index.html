@@ -13,6 +13,7 @@
     <link rel="stylesheet" href="assets/css/style.css" />
     <link rel="stylesheet" href="assets/css/parallax.css" />
     <link rel="stylesheet" href="assets/css/glassmorphism.css" />
+    <link rel="stylesheet" href="assets/css/compact-crypto.css" />
     <title>Mr Roboto - Interactive Parallax Experience</title>
 </head>
 
@@ -47,17 +48,8 @@
         <div class="content-container">
             <h1 class="hero-title" data-text=""></h1>
             <p class="hero-subtitle">Decentralized Funding Through Innovation</p>
-            <!-- Cryptocurrency Widgets -->
-            <div class="crypto-widgets-container" style="display: flex; gap: 20px; flex-wrap: wrap; justify-content: center;">
-                <!-- Bitcoin Widget -->
-                <div id="bitcoin-container" class="glass-widget bitcoin-widget compact"></div>
-
-                <!-- Ethereum Widget -->
-                <div id="ethereum-container" class="glass-widget crypto-widget compact"></div>
-
-                <!-- Solana Widget -->
-                <div id="solana-container" class="glass-widget crypto-widget compact"></div>
-            </div>
+            <!-- Compact Crypto Widget -->
+            <div id="compact-crypto-container" class="compact-crypto-container"></div>
 
             <div class="hero-cta">
                 <a href="wallet-dashboard.html" class="button-primary-green">Dashboard</a>
@@ -96,20 +88,28 @@
         <script src="assets/js/parallax.js"></script>
         <script src="assets/js/interactive.js"></script>
         <script src="assets/js/3d-scene.js"></script>
-        <!-- Cryptocurrency Data Handler -->
-        <script src="assets/js/crypto-handler.js"></script>
+        <!-- Compact Cryptocurrency Widget -->
+        <script src="assets/js/crypto-service-worker.js"></script>
+        <script src="assets/js/compact-crypto.js"></script>
         <script>
             document.addEventListener('DOMContentLoaded', function() {
-                // Initialize cryptocurrency widgets
-                cryptoHandler.initCryptoWidget('bitcoin', 'bitcoin-container', {
-                    compact: true
-                });
-                cryptoHandler.initCryptoWidget('ethereum', 'ethereum-container', {
-                    compact: true
-                });
-                cryptoHandler.initCryptoWidget('solana', 'solana-container', {
-                    compact: true
-                });
+                // Initialize the compact crypto widget with a short delay to ensure DOM is fully ready
+                setTimeout(function() {
+                    compactCryptoWidget.initWidget('compact-crypto-container', {
+                        defaultCoin: 'bitcoin',
+                        defaultCurrency: 'usd',
+                        theme: 'dark',
+                        showFloatingControls: true
+                    });
+                    console.log('Crypto widget initialized');
+
+                    // Start service worker background updates (if available)
+                    if (window.cryptoServiceWorker) {
+                        setTimeout(() => {
+                            window.cryptoServiceWorker.startBackgroundUpdates(['bitcoin']);
+                        }, 1000);
+                    }
+                }, 500);
             });
         </script>
 </body>

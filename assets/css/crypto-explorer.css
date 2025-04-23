@@ -1,0 +1,883 @@
+/* Crypto Explorer - Unified Cryptocurrency Widget with Search */
+
+.crypto-explorer {
+    color: var(--text-primary);
+    background: rgba(26, 30, 44, 0.65);
+    border-radius: 16px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.3);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    overflow: hidden;
+    max-width: 100%;
+    margin: 0 auto;
+    transition: all 0.3s ease;
+}
+
+.crypto-explorer.dark {
+    --explorer-bg: rgba(26, 30, 44, 0.65);
+    --explorer-text: #ffffff;
+    --explorer-text-secondary: rgba(255, 255, 255, 0.7);
+    --explorer-border: rgba(255, 255, 255, 0.08);
+    --explorer-card-bg: rgba(26, 30, 44, 0.5);
+    --explorer-input-bg: rgba(26, 30, 44, 0.5);
+    --explorer-positive: #20c997;
+    --explorer-negative: #e74c3c;
+    --explorer-accent: #00bfff;
+    --explorer-accent-hover: #0099cc;
+}
+
+.crypto-explorer:hover {
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.5);
+}
+
+
+/* Explorer Header */
+
+.explorer-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 16px 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.explorer-title {
+    display: flex;
+    align-items: center;
+}
+
+.explorer-icon {
+    font-size: 1.4rem;
+    margin-right: 12px;
+    color: var(--explorer-accent, #00bfff);
+}
+
+.explorer-title h3 {
+    margin: 0;
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.explorer-search {
+    flex-grow: 1;
+    margin-left: 16px;
+    max-width: 500px;
+}
+
+.search-input-wrapper {
+    display: flex;
+    align-items: center;
+    background: var(--explorer-input-bg, rgba(26, 30, 44, 0.5));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 8px;
+    padding: 4px 10px;
+    transition: all 0.2s ease;
+}
+
+.search-input-wrapper:focus-within {
+    border-color: var(--explorer-accent, #00bfff);
+    box-shadow: 0 0 0 2px rgba(0, 191, 255, 0.15);
+}
+
+.search-icon {
+    color: var(--explorer-text-secondary, rgba(255, 255, 255, 0.7));
+    margin-right: 8px;
+}
+
+.glass-input {
+    background: transparent;
+    border: none;
+    color: var(--explorer-text, #ffffff);
+    padding: 8px 0;
+    font-size: 0.9rem;
+    outline: none;
+    width: 100%;
+    font-family: inherit;
+}
+
+.glass-input::placeholder {
+    color: var(--explorer-text-secondary, rgba(255, 255, 255, 0.7));
+    opacity: 0.7;
+}
+
+.glass-button {
+    background: rgba(0, 191, 255, 0.2);
+    color: var(--explorer-accent, #00bfff);
+    border: none;
+    border-radius: 6px;
+    padding: 6px 12px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.glass-button:hover {
+    background: rgba(0, 191, 255, 0.3);
+}
+
+.glass-button-small {
+    padding: 4px 8px;
+    font-size: 0.8rem;
+}
+
+
+/* Explorer Tabs */
+
+.explorer-tabs {
+    display: flex;
+    padding: 0 20px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.tab-button {
+    background: transparent;
+    border: none;
+    color: var(--explorer-text-secondary, rgba(255, 255, 255, 0.7));
+    padding: 12px 16px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    transition: all 0.2s ease;
+    display: flex;
+    align-items: center;
+    border-bottom: 2px solid transparent;
+}
+
+.tab-button i {
+    margin-right: 6px;
+    font-size: 1rem;
+}
+
+.tab-button:hover {
+    color: var(--explorer-text, #ffffff);
+}
+
+.tab-button.active {
+    color: var(--explorer-accent, #00bfff);
+    border-bottom-color: var(--explorer-accent, #00bfff);
+}
+
+
+/* Explorer Filters */
+
+.explorer-filters {
+    display: flex;
+    gap: 12px;
+    padding: 12px 20px;
+    flex-wrap: wrap;
+}
+
+.filter-dropdown {
+    min-width: 140px;
+}
+
+.glass-select {
+    background: var(--explorer-input-bg, rgba(26, 30, 44, 0.5));
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    border-radius: 6px;
+    color: var(--explorer-text, #ffffff);
+    padding: 8px 12px;
+    font-size: 0.85rem;
+    outline: none;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    appearance: none;
+    background-image: url("data:image/svg+xml;charset=US-ASCII,%3Csvg%20xmlns%3D%22http%3A%2F%2Fwww.w3.org%2F2000%2Fsvg%22%20width%3D%22292.4%22%20height%3D%22292.4%22%3E%3Cpath%20fill%3D%22%23FFFFFF%22%20d%3D%22M287%2069.4a17.6%2017.6%200%200%200-13-5.4H18.4c-5%200-9.3%201.8-12.9%205.4A17.6%2017.6%200%200%200%200%2082.2c0%205%201.8%209.3%205.4%2012.9l128%20127.9c3.6%203.6%207.8%205.4%2012.8%205.4s9.2-1.8%2012.8-5.4L287%2095c3.5-3.5%205.4-7.8%205.4-12.8%200-5-1.9-9.2-5.5-12.8z%22%2F%3E%3C%2Fsvg%3E");
+    background-repeat: no-repeat;
+    background-position: right 10px center;
+    background-size: 10px;
+    padding-right: 24px;
+}
+
+.glass-select:focus {
+    border-color: var(--explorer-accent, #00bfff);
+    box-shadow: 0 0 0 2px rgba(0, 191, 255, 0.15);
+}
+
+.glass-select option {
+    background-color: rgb(26, 30, 44);
+    color: #ffffff;
+}
+
+
+/* Content Area */
+
+.explorer-content {
+    padding: 20px;
+    min-height: 400px;
+    position: relative;
+}
+
+
+/* Loading Indicator */
+
+.loading-indicator {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(26, 30, 44, 0.8);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    z-index: 10;
+}
+
+.spinner {
+    width: 40px;
+    height: 40px;
+    border: 3px solid rgba(255, 255, 255, 0.1);
+    border-top: 3px solid var(--explorer-accent, #00bfff);
+    border-radius: 50%;
+    animation: spin 1s linear infinite;
+    margin-bottom: 12px;
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}
+
+
+/* Grid View */
+
+.crypto-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(240px, 1fr));
+    gap: 16px;
+}
+
+.crypto-card {
+    background: var(--explorer-card-bg, rgba(26, 30, 44, 0.5));
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    padding: 16px;
+    transition: all 0.2s ease;
+    cursor: pointer;
+}
+
+.crypto-card:hover {
+    transform: translateY(-4px);
+    box-shadow: 0 8px 16px rgba(0, 0, 0, 0.2);
+    border-color: rgba(255, 255, 255, 0.1);
+}
+
+.crypto-card-header {
+    display: flex;
+    align-items: center;
+    margin-bottom: 12px;
+}
+
+.crypto-icon {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    margin-right: 8px;
+}
+
+.crypto-name {
+    font-weight: 500;
+    margin-right: 8px;
+}
+
+.crypto-symbol {
+    color: var(--explorer-text-secondary, rgba(255, 255, 255, 0.7));
+    font-size: 0.8rem;
+}
+
+.crypto-card-body {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.crypto-price {
+    font-size: 1.2rem;
+    font-weight: 500;
+}
+
+.crypto-change {
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+}
+
+.crypto-change.positive {
+    background: rgba(32, 201, 151, 0.15);
+    color: var(--explorer-positive, #20c997);
+}
+
+.crypto-change.negative {
+    background: rgba(231, 76, 60, 0.15);
+    color: var(--explorer-negative, #e74c3c);
+}
+
+.crypto-card-footer {
+    display: flex;
+    justify-content: center;
+}
+
+.card-action-button {
+    background: rgba(0, 191, 255, 0.1);
+    color: var(--explorer-accent, #00bfff);
+    border: none;
+    border-radius: 6px;
+    padding: 8px 16px;
+    width: 100%;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.85rem;
+}
+
+.card-action-button:hover {
+    background: rgba(0, 191, 255, 0.2);
+}
+
+
+/* List View */
+
+.crypto-list-table {
+    width: 100%;
+    border-collapse: collapse;
+    font-size: 0.85rem;
+}
+
+.crypto-list-table th,
+.crypto-list-table td {
+    padding: 12px 16px;
+    text-align: left;
+}
+
+.crypto-list-table th {
+    color: var(--explorer-text-secondary, rgba(255, 255, 255, 0.7));
+    font-weight: 500;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.crypto-list-table tr {
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.crypto-list-table tr:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+}
+
+.coin-cell {
+    display: flex;
+    align-items: center;
+}
+
+.list-crypto-icon {
+    width: 20px;
+    height: 20px;
+    margin-right: 8px;
+}
+
+.coin-cell-info {
+    display: flex;
+    flex-direction: column;
+}
+
+.coin-cell-symbol {
+    font-size: 0.75rem;
+    color: var(--explorer-text-secondary, rgba(255, 255, 255, 0.7));
+}
+
+.table-action-button {
+    background: rgba(0, 191, 255, 0.1);
+    color: var(--explorer-accent, #00bfff);
+    border: none;
+    border-radius: 4px;
+    padding: 4px 8px;
+    cursor: pointer;
+    transition: all 0.2s ease;
+    font-size: 0.75rem;
+}
+
+.table-action-button:hover {
+    background: rgba(0, 191, 255, 0.2);
+}
+
+
+/* Search Results */
+
+.search-results-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 16px;
+}
+
+.search-results-header h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.close-results-button {
+    background: transparent;
+    border: none;
+    color: var(--explorer-text-secondary, rgba(255, 255, 255, 0.7));
+    cursor: pointer;
+    font-size: 1.1rem;
+    padding: 4px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.close-results-button:hover {
+    color: var(--explorer-text, #ffffff);
+}
+
+.search-results-grid {
+    display: grid;
+    gap: 8px;
+}
+
+.search-result-item {
+    background: var(--explorer-card-bg, rgba(26, 30, 44, 0.5));
+    border-radius: 8px;
+    padding: 10px 16px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.search-result-item:hover {
+    background: rgba(26, 30, 44, 0.7);
+}
+
+.result-icon {
+    margin-right: 12px;
+}
+
+.result-icon img {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+}
+
+.result-info {
+    flex: 1;
+}
+
+.result-name {
+    font-weight: 500;
+}
+
+.result-symbol {
+    font-size: 0.75rem;
+    color: var(--explorer-text-secondary, rgba(255, 255, 255, 0.7));
+}
+
+.result-rank {
+    margin-right: 16px;
+}
+
+.rank-badge {
+    background: rgba(255, 255, 255, 0.1);
+    color: var(--explorer-text-secondary, rgba(255, 255, 255, 0.7));
+    padding: 2px 6px;
+    border-radius: 12px;
+    font-size: 0.75rem;
+}
+
+
+/* Detail View */
+
+.detail-back-button {
+    margin-bottom: 16px;
+}
+
+.back-button {
+    display: flex;
+    align-items: center;
+    gap: 4px;
+}
+
+.coin-detail-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+    gap: 16px;
+}
+
+.coin-main-info {
+    display: flex;
+    align-items: center;
+}
+
+.coin-large-icon {
+    width: 48px;
+    height: 48px;
+    margin-right: 16px;
+}
+
+.coin-titles h3 {
+    margin: 0 0 4px 0;
+    font-size: 1.5rem;
+}
+
+.coin-symbol {
+    color: var(--explorer-text-secondary, rgba(255, 255, 255, 0.7));
+    font-size: 0.9rem;
+}
+
+.coin-price-info {
+    text-align: right;
+}
+
+.current-price {
+    font-size: 1.5rem;
+    font-weight: 500;
+    margin-bottom: 4px;
+}
+
+.price-change {
+    display: inline-flex;
+    align-items: center;
+    padding: 4px 8px;
+    border-radius: 12px;
+    font-size: 0.85rem;
+}
+
+.price-change i {
+    margin-left: 4px;
+}
+
+.price-change.positive {
+    background: rgba(32, 201, 151, 0.15);
+    color: var(--explorer-positive, #20c997);
+}
+
+.price-change.negative {
+    background: rgba(231, 76, 60, 0.15);
+    color: var(--explorer-negative, #e74c3c);
+}
+
+.coin-detail-stats {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(150px, 1fr));
+    gap: 16px;
+    margin-bottom: 24px;
+}
+
+.stat-card {
+    background: var(--explorer-card-bg, rgba(26, 30, 44, 0.5));
+    border-radius: 8px;
+    padding: 12px;
+    text-align: center;
+}
+
+.stat-title {
+    font-size: 0.75rem;
+    color: var(--explorer-text-secondary, rgba(255, 255, 255, 0.7));
+    margin-bottom: 8px;
+}
+
+.stat-value {
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.coin-price-range {
+    background: var(--explorer-card-bg, rgba(26, 30, 44, 0.5));
+    border-radius: 8px;
+    padding: 16px;
+    margin-bottom: 24px;
+}
+
+.range-title {
+    font-size: 0.85rem;
+    color: var(--explorer-text-secondary, rgba(255, 255, 255, 0.7));
+    margin-bottom: 12px;
+}
+
+.range-bar-container {
+    padding: 0 8px;
+}
+
+.range-bar {
+    height: 6px;
+    background: rgba(255, 255, 255, 0.1);
+    border-radius: 3px;
+    position: relative;
+    margin-bottom: 8px;
+}
+
+.range-marker {
+    width: 12px;
+    height: 12px;
+    background: var(--explorer-accent, #00bfff);
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.range-labels {
+    display: flex;
+    justify-content: space-between;
+    font-size: 0.75rem;
+    color: var(--explorer-text-secondary, rgba(255, 255, 255, 0.7));
+}
+
+.coin-action-buttons {
+    display: flex;
+    gap: 12px;
+    margin-bottom: 24px;
+    flex-wrap: wrap;
+}
+
+.action-button {
+    flex: 1;
+    min-width: 100px;
+    padding: 10px;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 6px;
+    transition: all 0.2s ease;
+}
+
+.buy-button {
+    background: rgba(32, 201, 151, 0.2);
+    color: var(--explorer-positive, #20c997);
+}
+
+.buy-button:hover {
+    background: rgba(32, 201, 151, 0.3);
+}
+
+.sell-button {
+    background: rgba(231, 76, 60, 0.2);
+    color: var(--explorer-negative, #e74c3c);
+}
+
+.sell-button:hover {
+    background: rgba(231, 76, 60, 0.3);
+}
+
+.favorite-button {
+    background: rgba(255, 193, 7, 0.2);
+    color: #ffc107;
+}
+
+.favorite-button:hover {
+    background: rgba(255, 193, 7, 0.3);
+}
+
+.coin-description {
+    background: var(--explorer-card-bg, rgba(26, 30, 44, 0.5));
+    border-radius: 8px;
+    padding: 16px;
+}
+
+.coin-description h4 {
+    margin-top: 0;
+    margin-bottom: 12px;
+    font-size: 1rem;
+}
+
+.description-content {
+    font-size: 0.9rem;
+    line-height: 1.5;
+    color: var(--explorer-text-secondary, rgba(255, 255, 255, 0.7));
+}
+
+
+/* Favorites View */
+
+.favorites-header {
+    margin-bottom: 16px;
+}
+
+.favorites-header h4 {
+    margin: 0;
+    font-size: 1rem;
+    font-weight: 500;
+}
+
+.favorites-grid {
+    display: grid;
+    gap: 12px;
+}
+
+.favorite-item {
+    background: var(--explorer-card-bg, rgba(26, 30, 44, 0.5));
+    border-radius: 8px;
+    padding: 12px;
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    transition: all 0.15s ease;
+}
+
+.favorite-item:hover {
+    background: rgba(26, 30, 44, 0.7);
+}
+
+.favorite-icon {
+    margin-right: 12px;
+}
+
+.favorite-icon img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.favorite-info {
+    flex: 1;
+}
+
+.favorite-name {
+    font-weight: 500;
+}
+
+.favorite-symbol {
+    font-size: 0.8rem;
+    color: var(--explorer-text-secondary, rgba(255, 255, 255, 0.7));
+}
+
+.favorite-price {
+    margin-right: 16px;
+    text-align: right;
+}
+
+.price-value {
+    font-weight: 500;
+}
+
+.favorite-actions {
+    display: flex;
+    gap: 8px;
+}
+
+
+/* Empty States */
+
+.empty-state {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    padding: 40px 20px;
+    text-align: center;
+    color: var(--explorer-text-secondary, rgba(255, 255, 255, 0.7));
+}
+
+.empty-state i {
+    font-size: 3rem;
+    margin-bottom: 16px;
+    opacity: 0.5;
+}
+
+.empty-state p {
+    margin: 0 0 8px 0;
+}
+
+.empty-state .subtext {
+    font-size: 0.85rem;
+    opacity: 0.7;
+}
+
+
+/* Footer */
+
+.explorer-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 12px 20px;
+    border-top: 1px solid rgba(255, 255, 255, 0.08);
+    font-size: 0.8rem;
+    color: var(--explorer-text-secondary, rgba(255, 255, 255, 0.7));
+}
+
+.data-attribution a {
+    color: var(--explorer-accent, #00bfff);
+    text-decoration: none;
+}
+
+.refresh-info {
+    display: flex;
+    align-items: center;
+    gap: 8px;
+}
+
+.icon-button {
+    background: transparent;
+    border: none;
+    color: var(--explorer-text-secondary, rgba(255, 255, 255, 0.7));
+    cursor: pointer;
+    padding: 4px;
+    font-size: 1rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.icon-button:hover {
+    color: var(--explorer-accent, #00bfff);
+}
+
+
+/* Responsive Adjustments */
+
+@media (max-width: 768px) {
+    .explorer-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .explorer-search {
+        width: 100%;
+        margin-left: 0;
+        margin-top: 12px;
+    }
+    .explorer-tabs {
+        overflow-x: auto;
+        padding-bottom: 4px;
+    }
+    .explorer-filters {
+        overflow-x: auto;
+        padding-bottom: 8px;
+    }
+    .filter-dropdown {
+        min-width: 120px;
+    }
+    .crypto-grid {
+        grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+    }
+    .coin-detail-header {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    .coin-price-info {
+        align-self: flex-start;
+        text-align: left;
+    }
+    .crypto-list-table {
+        display: block;
+        overflow-x: auto;
+    }
+}
